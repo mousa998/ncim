@@ -1,0 +1,213 @@
+@import "../base/mixins";
+
+.navbar {
+  // Add transition for smooth effects
+  transition: all 0.3s ease;
+
+  .navbar-brand {
+    margin: 0;
+    padding: 0.5rem 0; // Add some vertical padding
+
+    img {
+      // Use transition for smooth resizing
+      transition: height 0.3s ease;
+      height: 50px;
+
+      @include breakpoint-down(md) {
+        height: 40px !important;
+      }
+
+      @include breakpoint-down(lg) {
+        height: 45px !important;
+      }
+
+      // Consider even smaller for very small devices
+      @include breakpoint-down(sm) {
+        height: 35px !important;
+      }
+    }
+  }
+
+  .mega-menu {
+    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    // Add these for better appearance:
+    border: none;
+    border-radius: 0 0 0.5rem 0.5rem;
+    padding: 1.5rem 0;
+    margin-top: 0; // Remove gap between navbar and dropdown
+  }
+
+  .navbar-nav {
+    height: 60px;
+    // Add gap between nav items
+    gap: 0.25rem;
+
+    .nav-link {
+      height: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center; // Center text better
+      color: $black;
+      font-weight: 500;
+      padding: 0 1.25rem; // More horizontal padding
+      transition: all 0.2s ease;
+      border-radius: 0.25rem; // Slight rounding
+
+      // Active state (missing in current style)
+      &.active {
+        font-weight: 600;
+        color: $primary !important; // Use your theme color
+
+        &::after {
+          background-color: $primary !important;
+          width: 100%; // Full width underline for active
+        }
+      }
+
+      &:hover {
+        background-color: rgba($gray-100, 0.5); // More subtle
+        color: darken($black, 10%);
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 0;
+          height: 3px; // Slightly thinner
+          width: 70%; // More elegant than 90%
+          background-color: $gray-400;
+          border-radius: 3px;
+          transition: all 0.3s ease;
+        }
+      }
+
+      // For dropdown toggles
+      &.dropdown-toggle {
+        &::after {
+          display: none; // Hide Bootstrap's default caret
+        }
+      }
+    }
+  }
+
+  // Mobile specific styles
+  @include breakpoint-down(lg) {
+    .navbar-nav {
+      height: auto; // Reset height for mobile
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem 0;
+
+      .nav-link {
+        height: auto;
+        padding: 0.75rem 1.5rem;
+        justify-content: flex-start;
+
+        &:hover::after {
+          display: none; // Remove underline effect on mobile
+        }
+      }
+    }
+  }
+
+  @include breakpoint-down(lg) {
+    .navbar-nav {
+      // For the main nav items container
+      height: auto;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem 0;
+
+      .nav-item {
+        width: 100%;
+
+        // For regular nav links
+        .nav-link {
+          height: auto;
+          padding: 0.75rem 1.5rem;
+          justify-content: flex-start;
+          border-radius: 0.25rem;
+
+          &:hover {
+            background-color: rgba($gray-100, 0.5);
+            &::after {
+              display: none; // Remove underline effect on tablet/mobile
+            }
+          }
+        }
+
+        // For dropdown toggles
+        &.dropdown {
+          .dropdown-toggle {
+            &::after {
+              display: inline-block; // Show caret for dropdowns
+              margin-right: auto; // Position caret properly in RTL
+              margin-left: 0.5rem;
+            }
+          }
+
+          .dropdown-menu {
+            position: static !important;
+            transform: none !important;
+            border: none;
+            box-shadow: none;
+            padding: 0;
+
+            .dropdown-item {
+              padding: 0.5rem 2rem; // Indent dropdown items
+            }
+          }
+        }
+      }
+    }
+
+    // Adjust the utility/action items (search, language, login)
+    .d-flex.navbar-nav {
+      flex-direction: row !important; // Keep these in a row
+      justify-content: flex-start;
+      padding: 1rem 0;
+      margin-top: 0.5rem;
+      border-top: 1px solid $gray-200;
+
+      .btn,
+      .dropdown {
+        margin: 0 0.5rem 0 0;
+      }
+    }
+  }
+
+  // Specific adjustments for ~1024px screens
+  @media (max-width: 1024px) and (min-width: 992px) {
+    .navbar-nav {
+      .nav-link {
+        padding: 0 0.75rem; // Slightly reduce padding
+        font-size: 0.9rem; // Slightly smaller font
+      }
+    }
+  }
+}
+
+// Offcanvas menu adjustments for medium screens
+.offcanvas-nav {
+  @include breakpoint-down(lg) {
+    width: 320px !important; // Slightly wider offcanvas for tablets
+
+    .offcanvas-body {
+      .navbar-nav {
+        .dropdown-menu {
+          li {
+            a.dropdown-item {
+              padding-left: 2.5rem; // More indentation for hierarchy
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.dropdown-menu-no-transform {
+  transform: none !important;
+}

@@ -1,0 +1,12 @@
+$utilities: map-merge(
+  $utilities,
+  (
+    "shadow":
+      map-merge(
+        map-get($utilities, "shadow"),
+        (
+          responsive: true,
+        )
+      ),
+  )
+);

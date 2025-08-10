@@ -1,0 +1,85 @@
+@import "./mixins";
+
+@mixin make-container($padding-x: $container-padding-x) {
+  width: 100%;
+  padding-right: $padding-x;
+  padding-left: $padding-x;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include breakpoint-down(md) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@mixin make-side-container($padding-x: $container-padding-x) {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include breakpoint-down(md) {
+    padding-inline: $padding-x;
+  }
+}
+
+@function adjust-width($width) {
+  // $width is in percentage
+  // Calculate the difference between 100% and the desired width (in percentage)
+  $diff: 100 - $width;
+
+  // Divide the difference by 2
+  $half-diff: $diff / 2;
+
+  // Calculate the new width by adding half the difference
+  $new-width: $width + $half-diff;
+
+  // Apply the new width
+  @return $new-width;
+}
+
+.d-rtl-block {
+  @include rtl {
+    display: block;
+  }
+
+  @include ltr {
+    display: none;
+  }
+}
+
+.d-rtl-flex {
+  @include rtl {
+    display: flex;
+  }
+
+  @include ltr {
+    display: none;
+  }
+}
+
+.d-ltr-block {
+  @include rtl {
+    display: none;
+  }
+
+  @include ltr {
+    display: block;
+  }
+}
+
+.d-ltr-flex {
+  @include rtl {
+    display: none;
+  }
+
+  @include ltr {
+    display: flex;
+  }
+}
+
+@mixin text-gradient($value) {
+  background: $value;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

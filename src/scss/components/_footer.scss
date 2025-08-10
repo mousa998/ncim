@@ -1,0 +1,23 @@
+@import "../base/_vars.scss";
+
+footer {
+  .action-icon {
+    padding: 0 !important;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $gray-800;
+    color: $gray-800;
+    stroke: $gray-800;
+    border-radius: 6px;
+    font-size: medium;
+
+    &:hover {
+      background-color: $gray-800;
+      color: $white;
+      stroke: $white;
+    }
+  }
+}

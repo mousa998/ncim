@@ -1,0 +1,194 @@
+@use "functions" as f;
+
+// === Base Tokens ===
+$white: #ffffff;
+$black: #161616;
+$blue-900: #1849a9;
+$blue-200: #b2ddff;
+$blue-50: #eff8ff;
+
+$gray-900: #1f2a37;
+$gray-800: #384250;
+$gray-700: #6c737f;
+$gray-400: #9da4ae;
+$gray-300: #d2d6db;
+$gray-200: #e5e7eb;
+$gray-100: #f3f4f6;
+$gray-50: #f9fafb;
+$gray-25: #fcfcfd;
+
+$green-900: #0d121c;
+$green-800: #067647;
+$green-700: #079455;
+$green-600: #1b8354;
+$green-400: #54c08a;
+$green-200: #b8eacb;
+$green-50: #f3fcf6;
+
+$green-tertiary: #6d428f;
+$green-dark: #074d31;
+
+$red-600: #b42318;
+$green-success-light: #ecfdf3;
+$green-success-border-light: #abefc6;
+
+$text: (
+  default: $black,
+  display: $gray-900,
+  primary: $green-600,
+  primary-light: $green-200,
+  primary-paragraph: $gray-800,
+  secondary-paragraph: $gray-700,
+  oncolor: $white,
+  oncolor-primary: $white,
+  oncolor-secondary: $white,
+  tertiary: #64748b,
+);
+
+$link: (
+  default: $gray-800,
+  primary: $green-600,
+  neutral: $gray-800,
+);
+
+$icon: (
+  default: $black,
+  neutral: $gray-800,
+  primary: $green-600,
+  background-brand-light: $green-50,
+  background-neutral-100: $green-50,
+  success: $green-800,
+  default-400: $gray-400,
+  oncolor: $white,
+);
+
+$backgrounds: (
+  neutral: $gray-50,
+  white: $white,
+  primary: $green-600,
+  primary-50: $green-50,
+  primary-400: $green-400,
+  neutral-25: $gray-25,
+  neutral-50: $gray-50,
+  neutral-100: $gray-100,
+  neutral-200: $gray-200,
+  neutral-800: $gray-900,
+  card: $white,
+  tertiary: $green-tertiary,
+  body: $gray-50,
+  sa-flag: $green-dark,
+  info-50: $blue-50,
+  success: $green-700,
+  success-25: #f6fef9,
+  menu: $white,
+);
+
+$tag: (
+  text-neutral: $gray-900,
+  background-neutral-light: $gray-50,
+  text-info: $blue-900,
+  border-info-light: $blue-200,
+  background-info-light: $blue-50,
+  border-success: $green-800,
+  border-success-light: $green-success-border-light,
+  background-success-light: $green-success-light,
+  icon-neutral: $gray-900,
+);
+
+$button: (
+  background-primary-default: $green-600,
+  neutral-100: $gray-100,
+  background-black-default: $green-900,
+  background-neutral-default: $gray-100,
+);
+
+$border: (
+  neutral-primary: $gray-300,
+  neutral-secondary: $gray-200,
+  neutral-tertiary: $gray-100,
+  black: $black,
+  primary: $green-600,
+  background-neutral: $gray-300,
+  white: $white,
+);
+
+$colors: (
+  primary-SA-Flag-50: $green-50,
+  primary-SA-Flag-200: $green-200,
+  primary-SA-Flag-400: $green-400,
+  primary-SA-Flag-500: #25935f,
+  Alpha-alpha-600-primary-60: $green-600,
+  base-black: #000000,
+  base-white: $white,
+);
+
+$global: (
+  disabled: $gray-400,
+  background-disabled: $gray-200,
+  icon-default-disabled: $gray-400,
+);
+
+$form: (
+  text-placeholder: $gray-700,
+  text-label: $black,
+  field-background-darker: $gray-100,
+  field-border-error: $red-600,
+  field-border-pressed: $green-900,
+  field-border-default: $gray-400,
+  field-background-default: $white,
+);
+
+$themes: (
+  light:
+    f.map-collect(
+      $text,
+      $link,
+      $icon,
+      $backgrounds,
+      $tag,
+      $button,
+      $border,
+      $colors,
+      $global,
+      $form
+    ),
+  dark:
+    f.map-collect(
+      $text,
+      $link,
+      $icon,
+      $backgrounds,
+      $tag,
+      $button,
+      $border,
+      $colors,
+      $global,
+      $form
+    ),
+);
+
+@function getTheme($theme) {
+  @return map-get($map: $themes, $key: $theme);
+}
+
+@function getColor($theme, $color) {
+  @return map-get(map-get($themes, $theme), $color);
+}
+
+// ======== Bootstrap Overrides ========
+$enable-dark-mode: false;
+$min-contrast-ratio: 5;
+
+$theme-font: "IBM Plex Sans Arabic", sans-serif;
+$form-control-p-x: 0.8rem;
+$form-control-p-y: 0.6rem;
+$form-control-radius: 0.5rem;
+$form-control-border-color: getColor(light, field-border-default);
+$form-control-border-error-color: getColor(light, field-border-error);
+$form-control-border-pressed-color: getColor(light, field-border-pressed);
+$form-btn-p-lg-x: 1rem;
+$form-btn-p-lg-y: 0.7rem;
+$form-btn-font-size-lg: 1rem;
+$form-btn-font-size: 0.8rem;
+$form-btn-font-weight: 700;
+$form-font-family: $theme-font;

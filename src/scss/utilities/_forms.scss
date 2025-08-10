@@ -1,0 +1,11 @@
+@import "../base/vars";
+
+/* -------------------------------------------------------------------------- */
+/*                                form control                                */
+/* -------------------------------------------------------------------------- */
+$input-padding-y: $form-control-p-y;
+$input-padding-x: $form-control-p-x;
+$input-border-radius: $form-control-radius;
+$input-focus-box-shadow: none;
+$input-focus-border-color: $form-control-border-pressed-color;
+$input-border-color: $form-control-border-color;

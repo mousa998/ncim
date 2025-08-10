@@ -1,0 +1,40 @@
+// 1) Import your base styles and functions
+@import "./base/functions";
+@import "./base/vars";
+@import "./base/mixins";
+@import "./base/helpers";
+@import "./base/typography";
+
+// 2) Import your custom themes and any other styles
+@import "./themes/core";
+
+// 3) add custom utilities to generate new classes based on theme for bootstrap
+@import "./utilities/spaces";
+@import "./utilities/sizes";
+@import "./utilities/background";
+@import "./utilities/fonts";
+@import "./utilities/shadow";
+@import "./utilities/cursor";
+@import "./utilities/positions";
+@import "./utilities/colors";
+@import "./utilities/buttons";
+@import "./utilities/dropdowns";
+@import "./utilities/forms";
+
+// 4) Import Bootstrap utilities (like breakpoints, grid, etc.)
+@import "../../node_modules/bootstrap/scss/utilities/api";
+
+// 5) vendors
+@import "../vendors/fontawesome/css/all.css";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// 6) components
+@import "./components/containers";
+@import "./components/controls-bar";
+@import "./components/navbar";
+@import "./components/footer";
+
+// 7) layouts
+
+// 8) pages
+@import "./pages/home";

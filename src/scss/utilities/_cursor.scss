@@ -1,0 +1,16 @@
+$utilities: map-merge(
+  $utilities,
+  (
+    "cursor": (
+      property: cursor,
+      values: (
+        pointer: pointer,
+        not-allowed: not-allowed,
+        no-drop: no-drop,
+        progress: progress,
+        zoom-in: zoom-in,
+        zoom-out: zoom-out,
+      ),
+    ),
+  )
+);

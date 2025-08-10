@@ -1,0 +1,64 @@
+@use "sass:math";
+@use "sass:map";
+
+// Unit conversion
+@function rem($pixel) {
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) * 1rem;
+  } @else {
+    @error 'Don\'t use units when using the rem() function; only numbers.';
+  }
+}
+
+@function em($pixel) {
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) * 1em;
+  } @else {
+    @error 'Don\'t use units when using the em() function; only numbers.';
+  }
+}
+
+// Map utilities
+@function map-collect($maps...) {
+  $collection: ();
+
+  @each $map in $maps {
+    $collection: map-merge($collection, $map);
+  }
+  @return $collection;
+}
+
+// Theme accessor
+@function t($key) {
+  @return map.get($theme-map, $key);
+}
+
+// Color conversion
+@function hex-to-rgb($hex) {
+  @if type-of($hex) != color {
+    @error "Expected a color, but got `#{$hex}`.";
+  }
+  @return red($hex), green($hex), blue($hex);
+}
+
+@function hex-rgba($hex, $alpha: 1) {
+  @if type-of($hex) != color {
+    @error "Expected a color, but got `#{$hex}`.";
+  }
+  @if $alpha < 0 or $alpha > 1 {
+    @error "Alpha value must be between 0 and 1, but got `#{$alpha}`.";
+  }
+  @return rgba(hex-to-rgb($hex), $alpha);
+}
+
+// Color getter with fallback
+@function color($keys...) {
+  $value: $color-palette;
+  @each $key in $keys {
+    $value: map.get($value, $key);
+    @if $value == null {
+      @error "Color `#{$key}` not found in palette";
+    }
+  }
+  @return $value;
+}

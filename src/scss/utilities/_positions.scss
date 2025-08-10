@@ -1,0 +1,60 @@
+// _variables.scss
+$position-values: (
+  0: 0,
+  50: 50%,
+  100: 100%,
+) !default;
+
+// _utilities.scss
+$utilities: map-merge(
+  $utilities,
+  (
+    "position": (
+      property: position,
+      values: static relative absolute fixed sticky,
+    ),
+    "inset-block": (
+      property: inset-block,
+      class: inset-block,
+      values: $position-values,
+    ),
+    "inset-inline": (
+      property: inset-inline,
+      class: inset-inline,
+      values: $position-values,
+    ),
+    "start": (
+      property: inset-inline-start,
+      class: start,
+      values: $position-values,
+    ),
+    "end": (
+      property: inset-inline-end,
+      class: end,
+      values: $position-values,
+    ),
+    "translate-middle": (
+      property: transform,
+      class: translate-middle,
+      values: (
+        null:
+          translate(
+            calc(var(--transform-translate-x) * -1),
+            calc(var(--transform-translate-y) * -1)
+          ),
+        x: translateX(calc(var(--transform-translate-x) * -1)),
+        y: translateY(calc(var(--transform-translate-y) * -1)),
+      ),
+    ),
+  )
+);
+
+// _root.scss
+:root {
+  --transform-translate-x: 50%;
+  --transform-translate-y: 50%;
+}
+
+[dir="rtl"] {
+  --transform-translate-x: -50%;
+}

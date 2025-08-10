@@ -1,0 +1,161 @@
+/* -------------------------------------------------------------------------- */
+/*                                   general                                  */
+/* -------------------------------------------------------------------------- */
+.mf-0 {
+  .mb-3 {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 form label                                 */
+/* -------------------------------------------------------------------------- */
+.form-label {
+  text-transform: capitalize;
+  font-family: $theme-font;
+
+  span {
+    color: red;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 placeholder                                */
+/* -------------------------------------------------------------------------- */
+.form-control::placeholder {
+  font-family: $theme-font;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                form control                                */
+/* -------------------------------------------------------------------------- */
+.form-control:focus {
+  box-shadow: none !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 form group                                 */
+/* -------------------------------------------------------------------------- */
+.input-group {
+  overflow: hidden;
+  border: 1px solid $input-border-color;
+  border-radius: $input-border-radius;
+
+  &:has(.form-control:focus) {
+    border-color: $form-control-border-color;
+  }
+
+  &:has(.form-control.is-invalid) {
+    border-color: $danger;
+  }
+
+  .input-group-text {
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .form-select {
+    border: none;
+  }
+
+  .form-control {
+    border-radius: 0;
+    border: none;
+    border-color: transparent;
+    box-shadow: none;
+    &.is-invalid,
+    &.is-valid {
+      box-shadow: none;
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              checkbox & radio                              */
+/* -------------------------------------------------------------------------- */
+.form-check {
+  display: flex;
+  gap: 1ex;
+  align-items: center;
+
+  .form-check-input {
+    margin-left: 0;
+    float: none;
+    cursor: pointer;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 validation                                 */
+/* -------------------------------------------------------------------------- */
+.is-invalid {
+  &.form-control {
+    padding-inline: $form-btn-p-lg-x !important;
+    padding-inline-end: $input-height-inner !important;
+    @include rtl {
+      background-position: left $input-height-inner-quarter center;
+    }
+
+    @include ltr {
+      background-position: right $input-height-inner-quarter center;
+    }
+  }
+
+  &.form-control {
+    padding-inline: $form-btn-p-lg-x !important;
+    padding-inline-end: $input-height-inner !important;
+    @include rtl {
+      background-position: left $input-height-inner-quarter center;
+    }
+
+    @include ltr {
+      background-position: right $input-height-inner-quarter center;
+    }
+  }
+
+  &.form-select {
+    padding-inline: $input-padding-x !important;
+    padding-inline-end: $form-select-feedback-icon-padding-end !important;
+    @include rtl {
+      background-position: left 0.75rem center, center left 2.25rem !important;
+    }
+
+    @include ltr {
+      background-position: right 0.75rem center, center right 2.25rem !important;
+    }
+  }
+}
+
+.is-invalid,
+.is-valid {
+  &.input-group {
+    border-color: $form-invalid-border-color;
+
+    &:hover,
+    &:has(.form-control:focus) {
+      border-color: $form-invalid-border-color;
+    }
+
+    .form-control {
+      padding-inline: $form-btn-p-lg-x !important;
+      padding-inline-end: $input-height-inner !important;
+      background-repeat: no-repeat;
+      background-image: escape-svg($form-feedback-icon-invalid);
+      background-size: $input-height-inner-half $input-height-inner-half;
+
+      @include rtl {
+        background-position: left 0 center !important;
+      }
+
+      @include ltr {
+        background-position: right 0 center !important;
+      }
+    }
+  }
+}

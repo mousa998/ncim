@@ -1,0 +1,241 @@
+@import "./functions";
+@import "./vars";
+
+// font sizes with clamp
+@mixin fs-fluid($min-vw, $max-vw, $min-value, $max-value) {
+  $factor: math.div(1, ($max-vw - $min-vw)) * ($max-value - $min-value);
+  $calc-value: unquote(
+    "#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }"
+  );
+
+  font-size: $min-value; // Fallback for older browsers
+  font-size: clamp(
+    #{if($min-value > $max-value, $max-value, $min-value)},
+    #{$calc-value},
+    #{if($min-value > $max-value, $min-value, $max-value)}
+  );
+}
+
+/* !!!: to set how many rows to show in element before clamp */
+@mixin line-clamp($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// layout breakpoints query
+
+$query-breakpoints: (
+  "xs": em(0),
+  "sm": em(576),
+  "md": em(768),
+  "lg": em(992),
+  "tab": em(1024),
+  "xl": em(1200),
+  "xxl": em(1440),
+);
+
+// Function to get breakpoint value (supports either key or pixel value)
+@function get-breakpoint-value($size) {
+  @if map-has-key($query-breakpoints, $size) {
+    @return map-get($query-breakpoints, $size);
+  }
+  @return em(
+    $size
+  ); // Assumes it's a pixel or other direct unit value if not in the map
+}
+
+@mixin breakpoint($size) {
+  @media (width >= map-get($query-breakpoints, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (width < map-get($query-breakpoints, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-range($min-size, $max-size) {
+  @media (min-width: map-get($query-breakpoints, $min-size)) and (max-width: map-get($query-breakpoints, $max-size)) {
+    @content;
+  }
+}
+
+@mixin minMedia($width) {
+  @media all and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin maxMedia($width) {
+  @media all and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  // XX-Large devices (larger desktops, 1400px and up)
+  @media (min-width: 1400px) {
+    & {
+      @content;
+    }
+  }
+}
+
+@mixin xl {
+  // X-Large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+    & {
+      @content;
+    }
+  }
+}
+
+@mixin lg {
+  // X-Large devices (large desktops, 1200px and up)
+  @media (min-width: 992px) {
+    & {
+      @content;
+    }
+  }
+}
+
+@mixin md {
+  @media (min-width: 768px) {
+    & {
+      @content;
+    }
+  }
+}
+
+@mixin sm {
+  // Small devices (landscape phones, 576px and up)
+  @media (min-width: 576px) {
+    & {
+      @content;
+    }
+  }
+}
+
+@mixin ipad {
+  // Small devices (landscape phones, 576px and up)
+  @media (max-width: 1199px) {
+    & {
+      @content;
+    }
+  }
+}
+
+@mixin mobile {
+  // Small devices (landscape phones, 576px and up)
+  @media (max-width: 991px) {
+    & {
+      @content;
+    }
+  }
+}
+
+@mixin mobile-767 {
+  // Small devices (landscape phones, 576px and up)
+  @media (max-width: 767px) {
+    & {
+      @content;
+    }
+  }
+}
+
+@mixin mobile-575 {
+  // Small devices (landscape phones, 576px and up)
+  @media (max-width: 575px) {
+    & {
+      @content;
+    }
+  }
+}
+
+// layout direction
+
+@mixin rtl {
+  html[dir="rtl"] & {
+    @content;
+  }
+}
+
+@mixin ltr {
+  html[dir="ltr"] & {
+    @content;
+  }
+}
+
+// themes
+@mixin themed() {
+  @each $theme, $map in $themes {
+    [data-bs-theme="#{$theme}"] & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@mixin themed-vars() {
+  @each $theme, $map in $themes-vars {
+    [data-bs-theme="#{$theme}"] & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes-vars, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@mixin theme($theme) {
+  [data-bs-theme="#{theme}"] & {
+    @content;
+  }
+}
+
+@mixin color-mode($mode: light, $root: false) {
+  @if $color-mode-type == "media-query" {
+    @if $root == true {
+      @media (prefers-color-scheme: $mode) {
+        :root {
+          @content;
+        }
+      }
+    } @else {
+      @media (prefers-color-scheme: $mode) {
+        @content;
+      }
+    }
+  } @else {
+    [data-bs-theme="#{$mode}"] {
+      @content;
+    }
+  }
+}
+
+@mixin hexRGBA($hexcolor, $opacity) {
+  background-color: $hexcolor;
+  background-color: rgba($hexcolor, $opacity);
+}

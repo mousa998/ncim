@@ -1,0 +1,29 @@
+@import "../base/helpers";
+@import "../base/mixins";
+
+.outer-container {
+  // Default with reasonable padding
+  @include make-container(25px);
+
+  @include md {
+    max-width: 95%;
+  }
+
+  @include lg {
+    max-width: 92%;
+  }
+
+  @include xl {
+    max-width: 90%;
+  }
+
+  // Above 1920px (Full HD) → fixed max width for nicer big-screen layout
+  @include minMedia(1920px) {
+    max-width: 1700px; // adjust as you like
+  }
+
+  // Ultra-wide (>3400px) → your original limit
+  @include minMedia(3400px) {
+    max-width: 2000px;
+  }
+}

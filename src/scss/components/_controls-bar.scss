@@ -1,0 +1,23 @@
+@import "../base/_vars";
+
+.control-bar {
+  padding-block: 2px;
+  .control-btn {
+    width: 35px;
+    height: 35px;
+    border: none !important;
+    border-radius: 50% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: $gray-300;
+    }
+
+    .icon {
+      width: 60%;
+      height: 60%;
+    }
+  }
+}

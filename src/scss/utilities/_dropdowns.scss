@@ -1,0 +1,14 @@
+// 1. Import functions first (required by Bootstrap vars)
+@import "../../../node_modules/bootstrap/scss/functions";
+:root {
+  --bs-dropdown-item-border-radius: 8px;
+}
+$dropdown-padding-x: 0.5rem;
+$dropdown-padding-y: 0.5rem;
+$dropdown-border-color: transparent;
+$dropdown-item-padding-y: $spacer * 0.5;
+$dropdown-item-padding-x: $spacer;
+$dropdown-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px;
+
+$dropdown-link-active-bg: $gray-200;
+$dropdown-inner-border-radius: 0.5rem;
