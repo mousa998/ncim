@@ -49,7 +49,6 @@ npm-debug.log
 .cache/
 
 # Package lock
-package-lock.json
 yarn.lock
 
 # OS generated files
