@@ -19,9 +19,14 @@ import gulp from "gulp";
 const { src, dest, series, parallel, watch } = gulp;
 
 import autoprefixer from "gulp-autoprefixer";
+import replace from "gulp-replace"; // ✅ added for base path injection
 
 const compiledSass = gulpSass(sass);
 const server = browserSync.create();
+
+// Detect environment
+const isProd = process.env.NODE_ENV === "production";
+const basePath = isProd ? "/ncim/" : "/";
 
 // Configuration
 const config = {
@@ -50,7 +55,7 @@ export function clean() {
   return deleteAsync([config.dist.base]);
 }
 
-// HTML processing
+// HTML processing with base path injection
 export function html() {
   return gulp
     .src(config.src.html)
@@ -60,6 +65,7 @@ export function html() {
         basepath: "@file",
       })
     )
+    .pipe(replace("{{basePath}}", basePath)) // ✅ inject base path
     .pipe(gulp.dest(config.dist.base))
     .pipe(server.stream());
 }
@@ -67,9 +73,6 @@ export function html() {
 /* =====================
    SCSS TASKS
 ===================== */
-
-// Dev (fast, no minify, with sourcemaps + caching)
-
 export function stylesDev() {
   return src(config.src.scss, { sourcemaps: true })
     .pipe(
@@ -88,7 +91,6 @@ export function stylesDev() {
     .pipe(server.stream());
 }
 
-// Prod (minified, no sourcemaps)
 export function stylesProd() {
   return gulp
     .src("src/scss/styles.scss", { sourcemaps: false })
@@ -98,6 +100,7 @@ export function stylesProd() {
         outputStyle: "compressed",
       }).on("error", compiledSass.logError)
     )
+    .pipe(autoprefixer())
     .pipe(cleanCSS())
     .pipe(rename({ suffix: ".min" }))
     .pipe(gulp.dest(config.dist.css));
