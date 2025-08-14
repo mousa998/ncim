@@ -26,8 +26,8 @@ const server = browserSync.create();
 
 // Detect environment
 const isProd = process.env.NODE_ENV === "production";
-// 👇 Use env var BASE_PATH if provided, otherwise fallback
-const basePath = process.env.BASE_PATH || (isProd ? "/NCIM-gulp/" : "");
+const repoName = process.env.BASE_PATH || ""; // get from Actions
+const basePath = isProd ? repoName : "/";
 
 // Configuration
 const config = {
