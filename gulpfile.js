@@ -19,14 +19,15 @@ import gulp from "gulp";
 const { src, dest, series, parallel, watch } = gulp;
 
 import autoprefixer from "gulp-autoprefixer";
-import replace from "gulp-replace"; // ✅ added for base path injection
+import replace from "gulp-replace";
 
 const compiledSass = gulpSass(sass);
 const server = browserSync.create();
 
 // Detect environment
 const isProd = process.env.NODE_ENV === "production";
-const basePath = isProd ? "/ncim/" : "/";
+// 👇 Use env var BASE_PATH if provided, otherwise fallback
+const basePath = process.env.BASE_PATH || (isProd ? "/NCIM-gulp/" : "");
 
 // Configuration
 const config = {
@@ -65,7 +66,7 @@ export function html() {
         basepath: "@file",
       })
     )
-    .pipe(replace("{{basePath}}", basePath)) // ✅ inject base path
+    .pipe(replace("{{basePath}}", basePath))
     .pipe(gulp.dest(config.dist.base))
     .pipe(server.stream());
 }
@@ -73,13 +74,10 @@ export function html() {
 /* =====================
    SCSS TASKS
 ===================== */
-/* =====================
-   OPTIMIZED SCSS TASKS
-===================== */
 export function stylesDev() {
   return src(config.src.scss, { sourcemaps: !isProd })
-    .pipe(cached("scss")) // Cache files to only process changed ones
-    .pipe(dependents()) // Process only changed files and their dependencies
+    .pipe(cached("scss"))
+    .pipe(dependents())
     .pipe(
       compiledSass({ outputStyle: "expanded" }).on(
         "error",
@@ -98,7 +96,7 @@ export function stylesDev() {
 
 export function stylesProd() {
   return src("src/scss/styles.scss", { sourcemaps: false })
-    .pipe(dependents()) // Still process dependencies for production
+    .pipe(dependents())
     .pipe(
       compiledSass({
         loadPaths: ["node_modules"],
@@ -110,6 +108,7 @@ export function stylesProd() {
     .pipe(rename({ suffix: ".min" }))
     .pipe(dest(config.dist.css));
 }
+
 /* =====================
    JS TASKS
 ===================== */
