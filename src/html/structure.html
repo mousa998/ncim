@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html
+    lang="ar"
+    dir="rtl"
+>
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    @@include('./partials/meta.html')
+    <title>الهيكل التنظيمي</title>
+</head>
+
+<body>
+    @@include('./components/control-bar.html')
+    @@include('./components/navbar.html')
+
+
+    @@include('./components/header.html', {
+    "breadcrumbs": [
+    {"text": "عن المركز", "link": "/"},
+    {"text": "الهيكل التنظيمي", "link": "/structure.html"}
+    ],
+    "title": "الهيكل التنظيمي"
+    })
+
+    <section class="py-6 vh-65">
+        <div class="outer-container h-100">
+            <div class="card h-100 border-0 bg-neutral-50">
+                <div class="card-body">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    @@include('./components/feedback.html')
+
+    @@include('./components/footer.html')
+    @@include('./partials/main-scripts.html')
+
+</body>
+
+</html>

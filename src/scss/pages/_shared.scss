@@ -126,3 +126,41 @@
     color: $black;
   }
 }
+
+.contact-sidebar {
+  @include breakpoint(lg) {
+    transform: translateY(-30%);
+  }
+}
+
+.nest-list {
+  a {
+    text-decoration: none;
+  }
+
+  & > li {
+    font-size: 16px;
+    a {
+      font-size: 16px;
+    }
+  }
+
+  & > li ul li {
+    font-size: 14px;
+    a {
+      font-size: 14px;
+    }
+  }
+}
+
+.bullet-link {
+  &,
+  li * {
+    color: $green-600;
+  }
+
+  &::marker,
+  li::marker {
+    color: $green-600; /* changes only the bullet */
+  }
+}
