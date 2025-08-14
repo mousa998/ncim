@@ -1,0 +1,24 @@
+@import "../base/_vars";
+@import "../base/mixins";
+
+.letter-selector {
+  .active-letter {
+    background: $green-600 !important;
+    color: white !important;
+  }
+}
+
+.card-letter {
+  width: 46px;
+  height: 36px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.letter-board {
+  @include breakpoint(lg) {
+    max-width: 450px;
+  }
+}

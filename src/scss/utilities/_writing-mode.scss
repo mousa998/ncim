@@ -1,0 +1,32 @@
+$utilities: map-merge(
+  $utilities,
+  (
+    // writing-mode utilities
+    "writing-mode":
+      (
+        property: writing-mode,
+        class: writing,
+        responsive: true,
+        values: (
+          horizontal: horizontal-tb,
+          vertical-rl: vertical-rl,
+          vertical-lr: vertical-lr,
+          sideways-rl: sideways-rl,
+          sideways-lr: sideways-lr,
+        ),
+      ),
+
+    // OPTIONAL: text-orientation helpers (useful with vertical writing)
+    "text-orientation":
+      (
+        property: text-orientation,
+        class: text-orient,
+        responsive: true,
+        values: (
+          mixed: mixed,
+          upright: upright,
+          sideways: sideways,
+        ),
+      )
+  )
+);

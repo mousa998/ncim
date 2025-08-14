@@ -1,0 +1,35 @@
+@import "../base/mixins";
+
+.news-card {
+  .news-card-image {
+    border-radius: 10px;
+    height: 250px;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .news-title {
+    @include line-clamp(1);
+  }
+
+  .news-desc {
+    @include line-clamp(2);
+  }
+}
+
+.news-header {
+  background: url("../images/bgs/news-bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.hr-dashed {
+  border: 0; /* Remove default border */
+  border-top: 2px dashed var(--bs-border-color); /* Bootstrap’s border color variable */
+}

@@ -1,0 +1,190 @@
+<section>
+    <div class="outer-container mt-4">
+        <div class="fw-400">تاريخ آخر تعديل: 04/12/2020 - 4:13 م بتوقيت السعودية</div>
+    </div>
+    <hr class="mb-0">
+    <form
+        class="outer-container py-sm-3"
+        id="feedbackForm"
+        novalidate
+    >
+        <div class="d-flex justify-content-between align-items-center gap-3 flex-wrap">
+            <div class="text-default d-flex gap-3 align-items-center">
+                <span>هل كانت هذه الصفحة مفيدة؟</span>
+                <div class="d-flex gap-3">
+                    <button
+                        type="button"
+                        id="positiveFeedbackBtn"
+                        class="btn btn-primary"
+                    >نعم</button>
+                    <button
+                        type="button"
+                        id="negativeFeedbackBtn"
+                        class="btn btn-background-neutral-default px-3"
+                    >لا</button>
+                </div>
+            </div>
+
+            <div>
+                <div
+                    id="positiveFeedback"
+                    class="fs-14 text-default d-block"
+                >
+                    60% من المستخدمين قالوا نعم من 2843 تعليقًا
+                </div>
+
+                <button
+                    type="button"
+                    id="closeFeedbackBtn"
+                    class="btn d-flex gap-2 align-items-center d-none"
+                >
+                    إغلاق
+                    <i class="fa-regular fa-circle-xmark"></i>
+                </button>
+            </div>
+        </div>
+
+        <div
+            class="collapse"
+            id="feedback"
+        >
+            <div class="mt-4">
+                <div class="row row-cols-lg-2">
+                    <div>
+                        <div class="text-secondary-paragraph mb-3"><span class="fw-600 text-default">من فضلك أخبرنا
+                                بالسبب</span>
+                            (يمكنك
+                            تحديد اختيار من متعدد)</div>
+                        <div class="mb-3 form-check">
+                            <input
+                                type="checkbox"
+                                class="form-check-input reason-checkbox"
+                                id="check1"
+                                name="reason"
+                                value="المحتوى غير ذي صلة"
+                            />
+                            <label
+                                class="form-check-label"
+                                for="check1"
+                            >المحتوى غير ذي صلة </label>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input
+                                type="checkbox"
+                                class="form-check-input reason-checkbox"
+                                id="check2"
+                                name="reason"
+                                value="المحتوى غير دقيق"
+                            />
+                            <label
+                                class="form-check-label"
+                                for="check2"
+                            >المحتوى غير دقيق</label>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input
+                                type="checkbox"
+                                class="form-check-input reason-checkbox"
+                                id="check3"
+                                name="reason"
+                                value="المحتوى طويل جدا"
+                            />
+                            <label
+                                class="form-check-label"
+                                for="check3"
+                            >المحتوى طويل جدا</label>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input
+                                type="checkbox"
+                                class="form-check-input reason-checkbox"
+                                id="check4"
+                                name="reason"
+                                value="شئ اّخر"
+                            />
+                            <label
+                                class="form-check-label"
+                                for="check4"
+                            >شئ اّخر</label>
+                        </div>
+                        <div class="invalid-feedback mb-3">الرجاء تحديد سبب واحد على الأقل</div>
+
+                        <div class="d-flex align-items-baseline">انا
+                            <div class="mb-3 ms-2">
+                                <div class="mb-3">
+                                    <div class="form-check form-check-inline">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            id="radio1"
+                                            name="gender"
+                                            value="1"
+                                            required
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="radio1"
+                                        >ذكر</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            id="radio2"
+                                            name="geneder"
+                                            value="2"
+                                            required
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="radio2"
+                                        >أنثى</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="invalid-feedback mb-3">الرجاء تحديد تقييم</div>
+                    </div>
+
+                    <div>
+                        <div class="mb-3">
+                            <label
+                                for="comment"
+                                class="form-label"
+                            >تعليق</label>
+                            <textarea
+                                class="form-control"
+                                name="comment"
+                                id="comment"
+                                rows="3"
+                                placeholder="النص المُدخل"
+                                maxlength="500"
+                            ></textarea>
+                            <div class="form-text">الحد الأقصى 500 حرف</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between gap-3 flex-wrap">
+                    <div>
+                        لمزيد من المعلومات يمكنك مراجعة <a
+                            href="http://"
+                            class="text-primary"
+                        >بيان المشاركة الإلكترونية</a> و
+                        <a
+                            href="http://"
+                            class="text-primary"
+                        >قواعد
+                            الأشتراك</a>
+                    </div>
+                    <div>
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                        >إرسال</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

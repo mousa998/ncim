@@ -12,6 +12,7 @@ $utilities: map-merge(
     "position": (
       property: position,
       values: static relative absolute fixed sticky,
+      responsive: true,
     ),
     "inset-block": (
       property: inset-block,

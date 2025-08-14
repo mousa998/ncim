@@ -20,6 +20,9 @@
 @import "./utilities/buttons";
 @import "./utilities/dropdowns";
 @import "./utilities/forms";
+@import "./utilities/writing-mode";
+@import "./utilities/table";
+@import "./utilities/pagination";
 
 // 4) Import Bootstrap utilities (like breakpoints, grid, etc.)
 @import "../../node_modules/bootstrap/scss/utilities/api";
@@ -33,8 +36,19 @@
 @import "./components/controls-bar";
 @import "./components/navbar";
 @import "./components/footer";
+@import "./components/breadcrumb";
+@import "./components/common-header";
+@import "./components/accordion";
+@import "./components/forms";
 
 // 7) layouts
 
 // 8) pages
 @import "./pages/home";
+@import "./pages/about";
+@import "./pages/owners-and-individuals";
+@import "./pages/terminology";
+@import "./pages/news";
+@import "./pages/service";
+@import "./pages/faq.scss";
+@import "./pages/shared";

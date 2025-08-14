@@ -9,3 +9,17 @@ $input-border-radius: $form-control-radius;
 $input-focus-box-shadow: none;
 $input-focus-border-color: $form-control-border-pressed-color;
 $input-border-color: $form-control-border-color;
+
+/* -------------------------------------------------------------------------- */
+/*                             checkbox and radio                             */
+/* -------------------------------------------------------------------------- */
+$form-check-input-width: 1.5em;
+$form-check-input-checked-bg-color: $green-600;
+$form-check-input-focus-box-shadow: none;
+
+/* -------------------------------------------------------------------------- */
+/*                                   buttons                                  */
+/* -------------------------------------------------------------------------- */
+.btn {
+  font-weight: 600 !important;
+}

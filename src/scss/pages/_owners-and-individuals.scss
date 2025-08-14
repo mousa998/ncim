@@ -1,0 +1,38 @@
+@import "../base/mixins";
+@import "../base/vars";
+
+#howWeServe {
+  .gradient-card {
+    background: linear-gradient(201deg, #f3fcf6 15%, #f9f5fa 34%, #f5faff 83%);
+
+    @include ltr {
+      background: linear-gradient(
+        -21deg,
+        #f3fcf6 15%,
+        #f9f5fa 34%,
+        #f5faff 83%
+      );
+      // -21deg is 201deg mirrored
+    }
+
+    .card-body {
+      padding-top: 6rem !important;
+      background-image: url("../images/icons/saudi-pattern.svg");
+      background-size: auto 3.5rem;
+      background-repeat: no-repeat;
+      background-position: top center;
+
+      @include ltr {
+        background-image: url("../images/icons/saudi-pattern.svg");
+        background-position: top left;
+      }
+    }
+  }
+}
+
+.bg-glow {
+  background: url("../images/bgs/glow-bg.png");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center top;
+}

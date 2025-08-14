@@ -1,0 +1,24 @@
+@import "../base/_vars";
+
+.accordion-button::after {
+  margin-left: 0;
+  margin-inline-start: auto;
+}
+
+.accordion-button:not(.collapsed) {
+  background: transparent;
+  border: none;
+  color: $black;
+}
+
+.accordion-button {
+  font-size: medium;
+  font-weight: 600;
+  box-shadow: none;
+  color: $black;
+
+  &:focus {
+    box-shadow: none;
+    color: $black;
+  }
+}

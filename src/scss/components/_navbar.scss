@@ -67,7 +67,7 @@
 
       &:hover {
         background-color: rgba($gray-100, 0.5); // More subtle
-        color: darken($black, 10%);
+        color: $black;
 
         &::after {
           content: "";
@@ -157,6 +157,10 @@
 
             .dropdown-item {
               padding: 0.5rem 2rem; // Indent dropdown items
+
+              &:focus {
+                color: $black;
+              }
             }
           }
         }

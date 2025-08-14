@@ -1,0 +1,128 @@
+@import "../base/mixins";
+
+.writing-mode {
+  @include breakpoint(lg) {
+    @include rtl {
+      writing-mode: sideways-lr;
+    }
+
+    @include ltr {
+      writing-mode: sideways-rl;
+    }
+  }
+}
+
+.pipeline {
+  @include breakpoint(lg) {
+    height: 450px;
+  }
+}
+
+@mixin circle($width, $image-size) {
+  width: $width;
+  height: $width;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: $image-size !important;
+    height: $image-size !important;
+    object-fit: contain;
+  }
+}
+
+.circle-icon-sm {
+  @include circle(45px, 50%);
+}
+
+.circle-icon {
+  @include circle(60px, 50%);
+}
+
+.circle-icon-custom {
+  @include circle(60px, 40%);
+}
+
+.circle-icon-lg {
+  @include circle(75px, 28px);
+}
+
+.card-bottom-pattern {
+  overflow: hidden;
+  .pattern {
+    max-height: 70px;
+    width: 95%;
+    height: auto;
+    display: block;
+    margin: auto;
+    transform: translateX(25%);
+    object-position: top center;
+    object-fit: fill;
+  }
+}
+
+.flip-ltr {
+  @include ltr {
+    transform: scale(-1);
+  }
+}
+
+.primary-bullet {
+  list-style: disc; /* keep default circle/dot */
+  li::marker {
+    color: $green-600; /* changes only the bullet */
+    font-size: 1.25em;
+  }
+}
+
+@import "../base/_vars";
+
+.nav-tabs {
+  border: 0;
+  .nav-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: getColor("light", "primary-paragraph");
+
+    &,
+    &:hover {
+      border: 0;
+    }
+
+    &.active {
+      color: $black;
+      font-weight: 700;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: "";
+        left: 50%;
+        bottom: 0;
+        width: calc(100% - 18px);
+        height: 4px;
+        border-radius: 50rem;
+        background-color: $green-600;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+[aria-expanded="true"] .arrow-icon {
+  transform: rotate(180deg);
+}
+
+.search-input-group {
+  .button {
+    border: none;
+    color: $black;
+  }
+}

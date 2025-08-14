@@ -1,0 +1,16 @@
+@import "../base/vars";
+.faq-tabs {
+  border-bottom: 4px solid $gray-300 !important;
+
+  .nav-link.active::after {
+    position: absolute !important;
+    content: "";
+    left: 50% !important;
+    bottom: -2px !important;
+    width: 100% !important;
+    height: 3.4px !important;
+    border-radius: 0 !important;
+    background-color: $green-600 !important;
+    transform: translateX(-50%) !important;
+  }
+}

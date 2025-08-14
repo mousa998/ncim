@@ -1,0 +1,167 @@
+@import "../base/mixins";
+@import "../base/_vars";
+
+.about-nav {
+  .nav-link {
+    position: relative;
+    color: getColor("light", "primary-paragraph");
+
+    &.active {
+      font-weight: 600;
+      color: getColor("light", "default");
+
+      &::before {
+        position: absolute;
+        content: "";
+
+        @include rtl {
+          right: 0;
+        }
+
+        @include ltr {
+          left: 0;
+        }
+
+        top: 0;
+        width: 4px;
+        background-color: $green-600;
+        height: 100%;
+        border-radius: 50rem;
+      }
+    }
+  }
+}
+
+#vision {
+  background: url("../images/bgs/glow-bg.png");
+  background-size: 100% calc(100% - 65px);
+  background-repeat: no-repeat;
+  background-position: center top 65px;
+
+  .vision-card {
+    background: linear-gradient(
+      $gray-50 0%,
+      $gray-100 33%,
+      rgba(#fafaff, 0.63) 52%
+    );
+
+    .icon {
+      width: 64px;
+      aspect-ratio: 1 / 1;
+      background-color: getColor("light", "neutral-100");
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+  }
+}
+
+#word {
+  .card {
+    background: url("../images/icons/Vector.svg");
+    background-position: left bottom;
+    background-size: auto 90%;
+    background-repeat: no-repeat;
+
+    @include ltr {
+      background: url("../images/icons/Vector-flipped.svg");
+      background-position: right bottom;
+      background-size: auto 90%;
+      background-repeat: no-repeat;
+    }
+
+    .pattern {
+      height: 60px;
+      object-position: right;
+
+      @include ltr {
+        transform: scale(-1);
+        object-position: left;
+      }
+    }
+  }
+}
+
+ol.item-list {
+  list-style: none;
+  counter-reset: item-counter;
+  padding-left: 0;
+
+  li {
+    background-color: getColor("light", "neutral-50");
+    padding: 1.2rem;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 8px;
+    counter-increment: item-counter;
+    position: relative;
+    padding-inline-start: 4.5rem;
+
+    /* Adjust gap between items */
+    min-height: 40px;
+    /* Match circle height */
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: counter(item-counter);
+      position: absolute;
+
+      width: 35px;
+      height: 35px;
+      background-color: getColor("light", "neutral-100");
+      /* Circle color - change as needed */
+      color: $green-600;
+      /* Number color */
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-inline-start: 1rem;
+
+      right: 0;
+
+      @include ltr {
+        left: 0;
+      }
+    }
+  }
+}
+
+ul.dot-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+
+  li {
+    background-color: getColor("light", "neutral-50");
+    padding: 1.2rem;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 8px;
+    position: relative;
+    padding-inline-start: 3rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: $green-600;
+      border-radius: 50%;
+      inset-inline-start: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}

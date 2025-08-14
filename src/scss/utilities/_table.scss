@@ -1,0 +1,35 @@
+@import "../base/_vars";
+
+$table-cell-padding-y: 1rem;
+$table-cell-padding-x: 1rem;
+$table-border-color: getColor("light", "neutral-tertiary");
+$table-striped-bg: getColor("light", "neutral-25");
+$table-striped-columns-order: odd;
+
+$table-variants: (
+  "primary": shift-color($green-600, 1),
+);
+
+.table-rounded {
+  border-collapse: separate; // Needed for border radius to render
+  border-spacing: 0;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.75rem;
+  overflow: hidden; // Some browsers ignore on table elements; wrapper is more reliable
+
+  // Base cell styling
+  > :not(caption) > * > * {
+    border: none; // Remove default Bootstrap borders
+    border-color: $table-border-color;
+  }
+
+  // Horizontal lines between rows
+  tr:not(:last-of-type) td {
+    border-bottom: 1px solid $table-border-color;
+  }
+}
+
+// Remove any Bootstrap .table-bordered borders
+.table-bordered > :not(caption) > * > * {
+  border: none;
+}

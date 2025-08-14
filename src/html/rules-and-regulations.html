@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html
+    lang="ar"
+    dir="rtl"
+>
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    @@include('./partials/meta.html')
+    <title>الأنظمة واللوائح</title>
+
+</head>
+
+<body>
+    @@include('./components/control-bar.html')
+    @@include('./components/navbar.html')
+    @@include('./components/header.html', {
+    "breadcrumbs": [
+    {"text": "عن المركز", "link": "/"},
+    {"text": "الأنظمة واللوائح", "link": "/rules-and-regulations.html"}
+    ],
+    "title": "الأنظمة واللوائح"
+    })
+
+
+    <section class="py-8">
+        <div class="outer-container">
+            <h3 class="fs-30 fw-700 mb-5">ملفات مهمة</h3>
+
+            <div class="row row-cols-lg-3 g-4">
+                <div>
+                    @@include('./components/file-card.html', {
+                    "title":"معايير تحديد مقدار رسوم لوحات الدعاية والإعلان"
+                    })
+                </div>
+                <div>
+                    @@include('./components/file-card.html', {
+                    "title":"التعليمات التنفيذية للائحة التصرف بالعقارات البلدية"
+                    })
+                </div>
+                <div>
+                    @@include('./components/file-card.html', {
+                    "title":"قواعد تنظيم لوحات الدعاية والإعلان"
+                    })
+                </div>
+                <div>
+                    @@include('./components/file-card.html', {
+                    "title":"التعليمات التنفيذية للائحة التصرف بالعقارات البلدية"
+                    })
+                </div>
+                <div>
+                    @@include('./components/file-card.html', {
+                    "title":"معايير تحديد مقدار رسوم لوحات الدعاية والإعلان"
+                    })
+                </div>
+                <div>
+                    @@include('./components/file-card.html', {
+                    "title":"قواعد تنظيم لوحات الدعاية والإعلان"
+                    })
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    @@include('./components/feedback.html')
+
+    @@include('./components/footer.html')
+    @@include('./partials/main-scripts.html')
+
+</body>
+
+</html>

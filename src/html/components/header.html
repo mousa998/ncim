@@ -1,0 +1,25 @@
+<header class="common-header py-6">
+    <div class="outer-container">
+        @@if (context.breadcrumbs) {
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb d-flex">
+                @@for (var i = 0; i <
+                    breadcrumbs.length;
+                    i++)
+                    {
+                    <li
+                    class="breadcrumb-item"
+                >
+                    <a href="`+breadcrumbs[i].link+`">`+breadcrumbs[i].text+`</a>
+                    </li>
+                    }
+            </ol>
+        </nav>
+        }
+        @@if (context.title) {
+        <h2 class="fs-36 fw-700 text-default">
+            @@title
+        </h2>
+        }
+    </div>
+</header>

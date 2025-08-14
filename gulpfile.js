@@ -73,8 +73,13 @@ export function html() {
 /* =====================
    SCSS TASKS
 ===================== */
+/* =====================
+   OPTIMIZED SCSS TASKS
+===================== */
 export function stylesDev() {
-  return src(config.src.scss, { sourcemaps: true })
+  return src(config.src.scss, { sourcemaps: !isProd })
+    .pipe(cached("scss")) // Cache files to only process changed ones
+    .pipe(dependents()) // Process only changed files and their dependencies
     .pipe(
       compiledSass({ outputStyle: "expanded" }).on(
         "error",
@@ -87,13 +92,13 @@ export function stylesDev() {
         cascade: false,
       })
     )
-    .pipe(dest(config.dist.css, { sourcemaps: "." }))
+    .pipe(dest(config.dist.css, { sourcemaps: isProd ? false : "." }))
     .pipe(server.stream());
 }
 
 export function stylesProd() {
-  return gulp
-    .src("src/scss/styles.scss", { sourcemaps: false })
+  return src("src/scss/styles.scss", { sourcemaps: false })
+    .pipe(dependents()) // Still process dependencies for production
     .pipe(
       compiledSass({
         loadPaths: ["node_modules"],
@@ -103,9 +108,8 @@ export function stylesProd() {
     .pipe(autoprefixer())
     .pipe(cleanCSS())
     .pipe(rename({ suffix: ".min" }))
-    .pipe(gulp.dest(config.dist.css));
+    .pipe(dest(config.dist.css));
 }
-
 /* =====================
    JS TASKS
 ===================== */

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html
+    lang="ar"
+    dir="rtl"
+>
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    @@include('./partials/meta.html')
+    <title>أصحاب العمل والأفراد</title>
+</head>
+
+<body>
+    @@include('./components/control-bar.html')
+    @@include('./components/navbar.html')
+
+
+    @@include('./components/header.html', {
+    "breadcrumbs": [
+    {"text": "عن المركز", "link": "/"},
+    {"text": "أصحاب العمل والأفراد", "link": "/owners-and-individuals.html"}
+    ],
+    "title": "أصحاب العمل والأفراد"
+    })
+
+
+    <section
+        id="howWeServe"
+        class="py-6"
+    >
+        <div class="outer-container">
+            <h3 class="fs-30 fw-700 mb-3">
+                كيف نخدمهم؟
+            </h3>
+            <p class="fs-16 fw-500 mb-5">يُقدم المركز الوطني للرقابة والالتزام خدمات متخصصة تُسهم في تمكين أصحاب العمل،
+                والعاملين، والأفراد من
+                أداء أدوارهم بفاعلية ضمن بيئة تنظيمية موحدة وواضحة.</p>
+
+
+            <div class="px-2 px-sm-0 ">
+                <div class="d-flex flex-column flex-lg-row gap-3 align-items-lg-end pipeline">
+                    <!-- Short card -->
+                    <div class="card bg-neutral-100 border-0 p-3 p-lg-4 hp-100 rounded-4 w-100 w-lg-fit">
+                        <div class="card-body d-flex align-items-center justify-content-center">
+                            <h5 class="m-0 fs-20 fw-700 text-center writing-mode">
+                                دعم فهم المتطلبات الرقابية
+                            </h5>
+                        </div>
+                    </div>
+
+                    <!-- Full height middle card -->
+                    <div class="card flex-fill align-self-stretch gradient-card p-md-4 p-2 border-0 rounded-4">
+                        <div class="card-body bg-white rounded-4 p-3 p-xl-4">
+                            <img
+                                src="images/icons/shakehand-outline.svg"
+                                alt="تعزيز الشفافية والثقة"
+                                class="mb-5 mb-xl-8"
+                            >
+
+                            <h4 class="fs-24 fw-700 text-default">تعزيز الشفافية والثقة</h4>
+                            <p>
+                                توفير آليات واضحة للتظلم والمساءلة، وتمكين الأفراد من الوصول للمعلومات التنظيمية ذات
+                                العلاقة. تساعد في إنجاز المعاملات الرقابية ومتابعة التزاماتهم بشكل ذاتي وسلس. من خلال
+                                منصات
+                                إرشادية توضح الحقوق والواجبات والضوابط الرقابية لكل نشاط.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Short card -->
+                    <div class="card bg-neutral-100 border-0 p-3 p-lg-4 hp-90 rounded-4  w-100 w-md-90 w-lg-fit">
+                        <div class="card-body d-flex align-items-center justify-content-center">
+                            <h5 class="m-0 fs-20 fw-700 text-center writing-mode">
+                                إتاحة أدوات رقمية مبسطة
+                            </h5>
+                        </div>
+                    </div>
+
+                    <!-- Second full-height card -->
+                    <div class="card bg-neutral-100 border-0 p-3 p-lg-4 hp-75 rounded-4 w-100 w-md-75 w-lg-fit">
+                        <div class="card-body d-flex align-items-center justify-content-center">
+                            <h5 class="m-0 fs-20 fw-700 text-center writing-mode">
+                                تسهيل الالتزام بالأنظمة
+                            </h5>
+                        </div>
+                    </div>
+
+                    <!-- Short card -->
+                    <div class="card bg-neutral-100 border-0 p-3 p-lg-4 hp-60 rounded-4 w-100 w-md-60 w-lg-fit">
+                        <div class="card-body d-flex align-items-center justify-content-center">
+                            <h5 class="m-0 fs-20 fw-700 text-center writing-mode">
+                                تسهيل الالتزام بالأنظمة
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="py-10 bg-neutral-50 bg-glow">
+        <div class="outer-container">
+            <h3 class="fs-30 fw-700 mb-3">
+                من هم المستفيدون؟
+            </h3>
+            <p class="fs-16 fw-500 mb-5">يُقدم المركز الوطني للرقابة والالتزام خدمات متخصصة تُسهم في تمكين أصحاب العمل،
+                والعاملين، والأفراد من
+                أداء أدوارهم بفاعلية ضمن بيئة تنظيمية موحدة وواضحة.</p>
+
+            <div class="row row-cols-lg-3 row-cols-md-2 g-4">
+                <div>
+                    <div class="card border-0 p-xl-4 p-3 rounded-4 h-100">
+                        <div class="card-body d-flex flex-column gap-3 align-items-center justify-content-center">
+                            <div class="circle-icon-lg bg-neutral-100 mb-3">
+                                <img
+                                    src="images/icons/owner.svg"
+                                    alt="building"
+                                    title="owners"
+                                >
+                            </div>
+                            <h5 class="fs-20 fw-700">المنشآت (أصحاب العمل)</h5>
+                            <p class="card-text mb-3">تشمل المنشآت التجارية والصناعية وغيرها الخاضعة للرقابة</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card border-0 p-xl-4 p-3 rounded-4 h-100">
+                        <div class="card-body d-flex flex-column gap-3 align-items-center justify-content-center">
+                            <div class="circle-icon-lg bg-neutral-100 mb-3">
+                                <img
+                                    src="images/icons/empolye.svg"
+                                    alt="empolyes"
+                                >
+                            </div>
+                            <h5 class="fs-20 fw-700">الموظفون في المنشآت</h5>
+                            <p class="card-text mb-3">العاملون ضمن القطاعات أو الأنشطة الخاضعة للتفتيش والرقابة</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card border-0 p-xl-4 p-3 rounded-4 h-100">
+                        <div class="card-body d-flex flex-column gap-3 align-items-center justify-content-center">
+                            <div class="circle-icon-lg bg-neutral-100 mb-3">
+                                <img
+                                    src="images/icons/citizens.svg"
+                                    alt="empolyes"
+                                >
+                            </div>
+                            <h5 class="fs-20 fw-700">الأفراد (المواطنون والمقيمون)</h5>
+                            <p class="card-text mb-3">كمتعاملين مع الجهات الرقابية أو متأثرين بنتائج أعمال التفتيش</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-8">
+        <div class="outer-container">
+            <div class="card card-bottom-pattern px-md-3 pt-md-3 px-xl-4 pt-xl-4 border-0 rounded-4 bg-primary-50">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between gap-3 flex-wrap flex-lg-nowrap">
+                        <div class="flex-fill">
+                            <h5 class="fs-30 fw-700 mb-3">الخدمات المتاحة</h5>
+                            <p class="fs-16">لمعرفة الخدمات الرقمية المتاحة لك كصاحب عمل أو فرد، تفضل بزيارة  صفحة
+                                الخدمات 
+                                واستعرض ما يقدمه المركز لك.</p>
+                        </div>
+
+                        <div class="flex-lg-shrink-0">
+                            <a
+                                class="btn btn-default d-flex gap-3 align-items-center"
+                                href="#"
+                                role="button"
+                            >
+
+                                عرض الخدمات
+
+                                <img
+                                    src="images/icons/arrow-link.svg"
+                                    class="flip-ltr"
+                                >
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <img
+                    src="images/icons/saudi-pattern-v2.svg"
+                    height="60"
+                    class="object-fit-cover object-center pattern mt-4"
+                >
+            </div>
+        </div>
+    </section>
+
+
+    @@include('./components/feedback.html')
+
+    @@include('./components/footer.html')
+    @@include('./partials/main-scripts.html')
+
+</body>
+
+</html>

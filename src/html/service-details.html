@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html
+    lang="ar"
+    dir="rtl"
+>
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    @@include('./partials/owl-styles.html')
+    @@include('./partials/meta.html')
+    <title>تفاصيل الخدمة</title>
+</head>
+
+<body>
+    @@include('./components/control-bar.html')
+    @@include('./components/navbar.html')
+
+
+    <header class="common-header py-6">
+        <div class="outer-container">
+
+            <div class="d-flex justify-content-between gap-3 flex-wrap col-xl-9 col-lg-7 pe-3">
+                <div>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb d-flex">
+
+                            <li class="breadcrumb-item">
+                                <a href="/services.html">الخدمات</a>
+                            </li>
+
+                            <li class="breadcrumb-item">
+                                <a href="/service-details.html">تفاصيل الخدمة</a>
+                            </li>
+
+
+
+                        </ol>
+                    </nav>
+
+                    <h2 class="fs-36 fw-700 text-default mb-3">
+                        طلب إصدار شهادة التزام
+                    </h2>
+
+
+                    <div class="d-flex gap-2 align-items-center mb-4">
+                        <span
+                            class="badge px-2 bg-background-neutral-light text-text-neutral rounded-1 fw-500 border border-1 border-neutral-secondary"
+                        >
+                            أصحاب العمل
+                        </span>
+                        <span
+                            class="badge px-2 bg-background-neutral-light text-text-neutral rounded-1 fw-500 border border-1 border-neutral-secondary"
+                        >
+                            الكترونية فقط
+                        </span>
+                        <span
+                            class="badge px-2 bg-background-neutral-light text-text-neutral rounded-1 fw-500 border border-1 border-neutral-secondary"
+                        >
+                            فورية
+                        </span>
+                    </div>
+
+                    <p>خدمة إلكترونية تمكّن المنشآت من الحصول على شهادة التزام تثبت استيفاءها للمتطلبات الرقابية.</p>
+
+                    <p>
+                        <a
+                            href="http://"
+                            class="text-primary text-decoration-none"
+                        >اتفاقية مستوى الخدمة <i class="fa-light fa-link"></i></a>
+                    </p>
+                </div>
+
+                <div>
+                    <a
+                        class="btn btn-primary "
+                        href="#"
+                        role="button"
+                    > بدء الخدمة</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <section class="py-6">
+        <div class="outer-container">
+            <div class="container-fluid">
+                <div class="row g-4">
+                    <div class="col-lg-7 col-xl-9">
+                        <ul
+                            class="nav nav-tabs ps-0"
+                            id="myTab"
+                            role="tablist"
+                        >
+                            <li
+                                class="nav-item"
+                                role="presentation"
+                            >
+                                <button
+                                    class="nav-link active"
+                                    id="steps-tab"
+                                    data-bs-toggle="tab"
+                                    data-bs-target="#steps"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="steps"
+                                    aria-selected="true"
+                                >
+                                    الخطوات
+                                </button>
+                            </li>
+                            <li
+                                class="nav-item"
+                                role="presentation"
+                            >
+                                <button
+                                    class="nav-link "
+                                    id="docs-tab"
+                                    data-bs-toggle="tab"
+                                    data-bs-target="#docs"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="docs"
+                                    aria-selected="false"
+                                >
+                                    المستندات المطلوبة
+                                </button>
+                            </li>
+                            <li
+                                class="nav-item"
+                                role="presentation"
+                            >
+                                <button
+                                    class="nav-link "
+                                    id="faq-tab"
+                                    data-bs-toggle="tab"
+                                    data-bs-target="#faq"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="faq"
+                                    aria-selected="false"
+                                >
+                                    الاسئلة الشائعة
+                                </button>
+                            </li>
+                            <li
+                                class="nav-item"
+                                role="presentation"
+                            >
+                                <button
+                                    class="nav-link "
+                                    id="comments-tab"
+                                    data-bs-toggle="tab"
+                                    data-bs-target="#comments"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="comments"
+                                    aria-selected="false"
+                                >
+                                    التعليقات
+                                </button>
+                            </li>
+                        </ul>
+
+                        <div
+                            class="tab-content mt-3"
+                            id="myTabContent"
+                        >
+                            <div
+                                class="tab-pane fade show active"
+                                id="steps"
+                                role="tabpanel"
+                                aria-labelledby="steps-tab"
+                            >
+                                <video
+                                    controls
+                                    poster="images/video-cover.svg"
+                                    class="w-100 rounded-4 my-4"
+                                >
+                                    <source
+                                        src="videos/sample.mp4"
+                                        type="video/mp4"
+                                    >
+                                    <source
+                                        src="videos/sample.webm"
+                                        type="video/webm"
+                                    >
+                                    Your browser does not support the video tag.
+                                </video>
+
+                                <ol class="d-flex flex-column gap-3">
+                                    <li>قم بالدخول إلى البوابة الوطنية للتسجيل الموحد عبر المنصة.</li>
+                                    <li>اختيار خدمات الاصدارء، ثم إصدار شهادة التزام.</li>
+                                    <li>خدمات الترخيص ثم البلدية المطلوبة.</li>
+                                    <li>اختيار المكتب الهندسي، ثم إدخال رقم وسنة إصدار مسح البناء، وإرفاق نسخة من السند.
+                                    </li>
+                                    <li>تقديم الطلب إلى المكتب الهندسي المحدد، ثم استكمال المعلومات والمرفقات في المكتب
+                                        الهندسي وإرسالها إلى البلدية.</li>
+                                    <li>التأكد من بيانات الطلب والمرفقات والموافقات من قبل البلدية.</li>
+                                    <li>الموافقة على الطلب وإصدار دفعة سداد. دفع الرسوم وطباعة الرخصة.</li>
+
+                                </ol>
+                            </div>
+                            <div
+                                class="tab-pane fade"
+                                id="docs"
+                                role="tabpanel"
+                                aria-labelledby="docs-tab"
+                            >
+                                <div class="row row-cols-md-2 g-4 mt-4">
+                                    <div>
+                                        <div class="card p-md-2 border-0 bg-neutral-50 rounded-3">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between gap-3 flex-wrap">
+                                                    <img
+                                                        src="images/icons/folder.svg"
+                                                        alt=""
+                                                        srcset=""
+                                                    >
+                                                </div>
+                                                <h6 class="mt-4 fs-16 fw-600">السجل التجاري</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="card p-md-2 border-0 bg-neutral-50 rounded-3">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between gap-3 flex-wrap">
+                                                    <img
+                                                        src="images/icons/folder.svg"
+                                                        alt=""
+                                                        srcset=""
+                                                    >
+                                                </div>
+                                                <h6 class="mt-4 fs-16 fw-600">إقرار المستثمر المرفق بالكراسة</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="card p-md-2 border-0 bg-neutral-50 rounded-3">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between gap-3 flex-wrap">
+                                                    <img
+                                                        src="images/icons/folder.svg"
+                                                        alt=""
+                                                        srcset=""
+                                                    >
+
+                                                    <span
+                                                        class="badge bg-primary rounded-2 border border-border-success-light bg-background-success-light text-success"
+                                                    >اختياري</span>
+                                                </div>
+                                                <h6 class="mt-4 fs-16 fw-600">السجل التجاري</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="tab-pane fade"
+                                id="faq"
+                                role="tabpanel"
+                                aria-labelledby="faq-tab"
+                            >
+                                <div
+                                    class="accordion accordion-flush"
+                                    id="faqAccordion"
+                                >
+
+                                    <!-- Question 1 -->
+                                    <div class="accordion-item">
+                                        <h2
+                                            class="accordion-header"
+                                            id="heading1"
+                                        >
+                                            <button
+                                                class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapse1"
+                                                aria-expanded="false"
+                                                aria-controls="collapse1"
+                                            >
+                                                كيف أقدّم طلب إصدار شهادة التزام؟
+                                            </button>
+                                        </h2>
+                                        <div
+                                            id="collapse1"
+                                            class="accordion-collapse collapse"
+                                            aria-labelledby="heading1"
+                                            data-bs-parent="#faqAccordion"
+                                        >
+                                            <div class="accordion-body">
+                                                املأ النموذج الإلكتروني، وارفق وصف النشاط أو مخطط الموقع، ثم أرسل الطلب
+                                                لتتبع حالته في حسابك.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Question 2 -->
+                                    <div class="accordion-item">
+                                        <h2
+                                            class="accordion-header"
+                                            id="heading2"
+                                        >
+                                            <button
+                                                class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapse2"
+                                                aria-expanded="false"
+                                                aria-controls="collapse2"
+                                            >
+                                                كيف أجدد طلب إصدار شهادة التزام؟
+                                            </button>
+                                        </h2>
+                                        <div
+                                            id="collapse2"
+                                            class="accordion-collapse collapse"
+                                            aria-labelledby="heading2"
+                                            data-bs-parent="#faqAccordion"
+                                        >
+                                            <div class="accordion-body">
+                                                املأ النموذج الإلكتروني، وارفق وصف النشاط أو مخطط الموقع، ثم أرسل الطلب
+                                                لتتبع حالته في حسابك.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Question 3 -->
+                                    <div class="accordion-item">
+                                        <h2
+                                            class="accordion-header"
+                                            id="heading3"
+                                        >
+                                            <button
+                                                class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapse3"
+                                                aria-expanded="false"
+                                                aria-controls="collapse3"
+                                            >
+                                                كيف ألغي طلب إصدار شهادة التزام؟
+                                            </button>
+                                        </h2>
+                                        <div
+                                            id="collapse3"
+                                            class="accordion-collapse collapse"
+                                            aria-labelledby="heading3"
+                                            data-bs-parent="#faqAccordion"
+                                        >
+                                            <div class="accordion-body">
+                                                املأ النموذج الإلكتروني، وارفق وصف النشاط أو مخطط الموقع، ثم أرسل الطلب
+                                                لتتبع حالته في حسابك.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Question 4 -->
+                                    <div class="accordion-item">
+                                        <h2
+                                            class="accordion-header"
+                                            id="heading4"
+                                        >
+                                            <button
+                                                class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapse4"
+                                                aria-expanded="false"
+                                                aria-controls="collapse4"
+                                            >
+                                                كيف أستخدم المنصة؟
+                                            </button>
+                                        </h2>
+                                        <div
+                                            id="collapse4"
+                                            class="accordion-collapse collapse"
+                                            aria-labelledby="heading4"
+                                            data-bs-parent="#faqAccordion"
+                                        >
+                                            <div class="accordion-body">
+                                                املأ النموذج الإلكتروني، وارفق وصف النشاط أو مخطط الموقع، ثم أرسل الطلب
+                                                لتتبع حالته في حسابك.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Question 5 -->
+                                    <div class="accordion-item">
+                                        <h2
+                                            class="accordion-header"
+                                            id="heading5"
+                                        >
+                                            <button
+                                                class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapse5"
+                                                aria-expanded="false"
+                                                aria-controls="collapse5"
+                                            >
+                                                كيف أسجل دخول؟
+                                            </button>
+                                        </h2>
+                                        <div
+                                            id="collapse5"
+                                            class="accordion-collapse collapse"
+                                            aria-labelledby="heading5"
+                                            data-bs-parent="#faqAccordion"
+                                        >
+                                            <div class="accordion-body">
+                                                املأ النموذج الإلكتروني، وارفق وصف النشاط أو مخطط الموقع، ثم أرسل الطلب
+                                                لتتبع حالته في حسابك.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Question 6 -->
+                                    <div class="accordion-item">
+                                        <h2
+                                            class="accordion-header"
+                                            id="heading6"
+                                        >
+                                            <button
+                                                class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapse6"
+                                                aria-expanded="false"
+                                                aria-controls="collapse6"
+                                            >
+                                                كيف أجدد طلب إصدار شهادة التزام؟ (مرة أخرى)
+                                            </button>
+                                        </h2>
+                                        <div
+                                            id="collapse6"
+                                            class="accordion-collapse collapse"
+                                            aria-labelledby="heading6"
+                                            data-bs-parent="#faqAccordion"
+                                        >
+                                            <div class="accordion-body">
+                                                املأ النموذج الإلكتروني، وارفق وصف النشاط أو مخطط الموقع، ثم أرسل الطلب
+                                                لتتبع حالته في حسابك.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Question 7 -->
+                                    <div class="accordion-item">
+                                        <h2
+                                            class="accordion-header"
+                                            id="heading7"
+                                        >
+                                            <button
+                                                class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapse7"
+                                                aria-expanded="false"
+                                                aria-controls="collapse7"
+                                            >
+                                                كيف أستخدم المنصة؟ (مرة أخرى)
+                                            </button>
+                                        </h2>
+                                        <div
+                                            id="collapse7"
+                                            class="accordion-collapse collapse"
+                                            aria-labelledby="heading7"
+                                            data-bs-parent="#faqAccordion"
+                                        >
+                                            <div class="accordion-body">
+                                                املأ النموذج الإلكتروني، وارفق وصف النشاط أو مخطط الموقع، ثم أرسل الطلب
+                                                لتتبع حالته في حسابك.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Question 8 -->
+                                    <div class="accordion-item">
+                                        <h2
+                                            class="accordion-header"
+                                            id="heading8"
+                                        >
+                                            <button
+                                                class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapse8"
+                                                aria-expanded="false"
+                                                aria-controls="collapse8"
+                                            >
+                                                كيف أقدّم طلب إصدار شهادة التزام؟ (مرة أخرى)
+                                            </button>
+                                        </h2>
+                                        <div
+                                            id="collapse8"
+                                            class="accordion-collapse collapse"
+                                            aria-labelledby="heading8"
+                                            data-bs-parent="#faqAccordion"
+                                        >
+                                            <div class="accordion-body">
+                                                املأ النموذج الإلكتروني، وارفق وصف النشاط أو مخطط الموقع، ثم أرسل الطلب
+                                                لتتبع حالته في حسابك.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="card border-0 bg-neutral rounded-3 mt-3">
+                                    <div
+                                        class="card-body d-flex justify-content-between align-items-center gap-3 flex-wrap">
+                                        <h6 class="fs-14 fw-600 m-0">لم تعثر على سؤالك؟</h6>
+                                        <button
+                                            type="button"
+                                            class="btn btn-primary btn-sm"
+                                        >إضافة سؤال</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="tab-pane fade"
+                                id="comments"
+                                role="tabpanel"
+                                aria-labelledby="comments-tab"
+                            >
+                                <div class="d-flex flex-column gap-3">
+                                    <div class="card border-0">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center mb-4">
+                                                <div class="flex-shrink-0">
+                                                    <div
+                                                        class="circle-icon bg-background-neutral-default text-uppercase fw-600">
+                                                        KM
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1 ms-3">
+                                                    <h6 class="mt-0 fs-16">خالد محمد</h6>
+                                                    <p class="m-0">
+                                                        الاربعاء، 07/02/2025 - 03:27
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <p class="card-text mb-2">قدمت على الخدمة من أسبوع وما وصلتني الشهادة،
+                                                المفروض
+                                                إنها
+                                                فورية، فيه مشكلة؟</p>
+
+                                            <button
+                                                class="btn text-primary d-flex align-items-center gap-2 fw-400 border-0 p-0"
+                                            >
+                                                اضافة رد
+                                                <img
+                                                    src="images/icons/chat.svg"
+                                                    alt=""
+                                                    srcset=""
+                                                >
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card border-0">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center mb-4">
+                                                <div class="flex-shrink-0">
+                                                    <div
+                                                        class="circle-icon bg-background-neutral-default text-uppercase fw-600">
+                                                        SA
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1 ms-3">
+                                                    <h6 class="mt-0 fs-16">خالد محمد</h6>
+                                                    <p class="m-0">
+                                                        الاربعاء، 07/02/2025 - 03:27
+                                                    </p>
+                                                </div>
+
+                                                <button
+                                                    class="btn"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#replay"
+                                                    aria-expanded="false"
+                                                    aria-controls="replay"
+                                                >
+                                                    <i
+                                                        class="fa fa-angle-down arrow-icon"
+                                                        aria-hidden="true"
+                                                    ></i>
+                                                </button>
+                                            </div>
+
+                                            <p class="card-text mb-2">قدمت على الخدمة من أسبوع وما وصلتني الشهادة،
+                                                المفروض
+                                                إنها
+                                                فورية، فيه مشكلة؟</p>
+
+                                            <button
+                                                class="btn text-primary d-flex align-items-center gap-2 fw-400 border-0 p-0"
+                                            >
+                                                اضافة رد
+                                                <img
+                                                    src="images/icons/chat.svg"
+                                                    alt=""
+                                                    srcset=""
+                                                >
+                                            </button>
+
+                                            <div
+                                                class="collapse mt-3 pe-lg-2"
+                                                id="replay"
+                                            >
+                                                <div
+                                                    class="card border-0 rounded-4 bg-background-neutral-light w-lg-95">
+                                                    <div class="card-body">
+                                                        <div class="d-flex align-items-center mb-4">
+                                                            <div class="flex-shrink-0">
+                                                                <div
+                                                                    class="circle-icon bg-background-neutral-default text-uppercase border border-white fw-600">
+                                                                    AA
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <h6 class="mt-0 fs-16">أحمد عبدالله</h6>
+                                                                <p class="m-0">
+                                                                    الاربعاء، 07/02/2025 - 03:27
+                                                                </p>
+                                                            </div>
+                                                        </div>
+
+                                                        <p class="card-text mb-2">شكرًا لتواصلك، نعتذر عن التأخير.
+                                                            الخدمة في
+                                                            الأصل فورية، لكن في بعض الحالات قد تتطلب مراجعة إضافية من
+                                                            الجهة
+                                                            المختصة. يُرجى تزويدنا برقم الطلب عبر الرسائل الخاصة أو من
+                                                            خلال
+                                                            الدعم الفني لنتمكن من مساعدتك بشكل أدق</p>
+                                                        <button
+                                                            class="btn text-primary d-flex align-items-center gap-2 fw-400 border-0 p-0"
+                                                        >
+                                                            اضافة رد
+                                                            <img
+                                                                src="images/icons/chat.svg"
+                                                                alt=""
+                                                                srcset=""
+                                                            >
+                                                        </button>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-5 col-xl-3 ">
+                        <div class="card rounded-4 p-lg-3 service-sidebar">
+                            <div class="card-body">
+                                <div class="d-flex flex-column gap-3 mb-4">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0">
+                                            <img
+                                                src="images/icons/person.svg"
+                                                width="24"
+                                            />
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="mt-0 fs-16 fw-700">الفئة المستهدفة</h6>
+                                            <p class="mb-0">
+                                                أصحاب العمل
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0">
+                                            <img
+                                                src="images/icons/time.svg"
+                                                width="24"
+                                            />
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="mt-0 fs-16 fw-700">مدة الخدمة</h6>
+                                            <p class="mb-0">
+                                                5.0 ايام
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0">
+                                            <img
+                                                src="images/icons/computer-v2.svg"
+                                                width="24"
+                                            />
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="mt-0 fs-16 fw-700">قنوات الخدمة</h6>
+                                            <p class="mb-0">
+                                                تطبيق الويب والجوال
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0">
+                                            <img
+                                                src="images/icons/money.svg"
+                                                width="24"
+                                            />
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="mt-0 fs-16 fw-700">تكلفة الخدمة</h6>
+                                            <p class="mb-0">
+                                                مجانًا
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <h5 class="fs-18 fw-700 mb-3">
+                                    قنوات الدفع
+                                </h5>
+                                <div class="d-flex gap-2">
+                                    <a
+                                        class="btn border-background-neutral"
+                                        href="#"
+                                        role="button"
+                                    >
+
+                                        <img
+                                            src="images/icons/Mada.png"
+                                            alt=""
+                                            srcset=""
+                                        >
+                                    </a>
+                                    <a
+                                        class="btn border-background-neutral"
+                                        href="#"
+                                        role="button"
+                                    >
+
+                                        <img
+                                            src="images/icons/STCpay.png"
+                                            alt=""
+                                            srcset=""
+                                        >
+                                    </a>
+                                </div>
+
+                                <hr class="my-4" />
+
+                                <div class="d-flex flex-column gap-3 mb-4">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1 ">
+                                            <h6 class="mt-0 fs-16 fw-700">الاسئلة الشائعة</h6>
+                                            <a
+                                                href="http://"
+                                                class="text-primary d-flex align-items-center gap-2 text-decoration-none"
+                                            >Ministry-FAQ's-page
+
+                                                <img src="images/icons/redirect-v2.svg">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0">
+                                            <img
+                                                src="images/icons/phone.svg"
+                                                width="24"
+                                            />
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="mt-0 fs-16 fw-700">الهاتف</h6>
+                                            <a
+                                                href="tel:+9200343222"
+                                                class="text-primary d-flex align-items-center gap-2 text-decoration-none"
+                                            >9200343222 <img src="images/icons/redirect-v2.svg"></a>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0">
+                                            <img
+                                                src="images/icons/email.svg"
+                                                width="24"
+                                            />
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="mt-0 fs-16 fw-700">البريد الالكتروني</h6>
+                                            <a
+                                                href="mailto:help@company.sa"
+                                                class="text-primary d-flex align-items-center gap-2 text-decoration-none"
+                                            >
+                                                help@company.sa
+                                                <img src="images/icons/redirect-v2.svg">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button
+                                    type="button"
+                                    class="btn btn-background-neutral-default text-default"
+                                >تحميل دليل المستخدم</button>
+
+                                <hr class="my-4" />
+
+                                <div class="d-flex flex-wrap gap-3">
+                                    <a
+                                        type="button"
+                                        class="btn p-0 border-0"
+                                    ><img
+                                            src="images/icons/google-store.png"
+                                            alt=""
+                                            srcset=""
+                                        ></a>
+                                    <a
+                                        type="button"
+                                        class="btn p-0 border-0"
+                                    ><img
+                                            src="images/icons/apple-store.png"
+                                            alt=""
+                                            srcset=""
+                                        ></a>
+                                    <a
+                                        type="button"
+                                        class="btn p-0 border-0"
+                                    ><img
+                                            src="images/icons/gallery-store.png"
+                                            alt=""
+                                            srcset=""
+                                        ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-6 bg-neutral-50">
+        <div class="outer-container">
+            <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+                <div>
+                    <h3 class="fs-30 fw-700 mb-2">خدمات ذات صلة</h3>
+                    <p>مثال على وصف الخدمة لشراء قطعة أرض لبناء منزلك، يتطلب ذلك توثيق عملية البيع والشراء في مكاتب
+                        التوثيق
+                        أو
+                        خدمات كاتب العدل لتسجيل العقار باسمك.</p>
+                </div>
+
+                <div>
+                    <button
+                        type="button"
+                        class="btn btn-neutral-50"
+                    >عرض الكل</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="owl-carousel owl-theme services-owl mt-6">
+
+            @@for(var index = 0; index <
+                9;
+                index++){
+                <div
+                class="item"
+            >
+                <div class="card border-neutral-tertiary p-md-3 rounded-4 h-100">
+                    <div class="card-body d-flex flex-column">
+                        <!-- Icon -->
+                        <div class="circle-icon-sm bg-background-brand-light mb-4">
+                            <img
+                                src="images/icons/task.svg"
+                                alt=""
+                            >
+                        </div>
+                        <!-- Title -->
+                        <h6 class="card-subtitle mb-2 fs-16 fw-700">طلب إصدار شهادة التزام</h6>
+                        <!-- Description -->
+                        <p class="card-text mb-3">
+                            خدمة إلكترونية تمكّن المنشآت من الحصول على شهادة التزام تثبت استيفاءها للمتطلبات الرقابية.
+                        </p>
+                        <!-- Badges -->
+                        <div class="d-flex gap-2 align-items-center mb-4">
+                            <span
+                                class="badge px-2 bg-background-info-light text-text-info rounded-1 fw-500 border border-1 border-border-info-light"
+                            >
+                                أصحاب العمل
+                            </span>
+                            <span
+                                class="badge px-2 bg-background-neutral-light text-text-neutral rounded-1 fw-500 border border-1 border-neutral-secondary"
+                            >
+                                الكترونية فقط
+                            </span>
+                            <span
+                                class="badge px-2 bg-background-neutral-light text-text-neutral rounded-1 fw-500 border border-1 border-neutral-secondary"
+                            >
+                                فورية
+                            </span>
+                        </div>
+                        <!-- Actions -->
+                        <div class="mt-auto d-flex gap-2 align-items-center">
+                            <a
+                                class="btn btn-outline-neutral-primary btn-sm text-default"
+                                href="#"
+                            >التفاصيل</a>
+                            <a
+                                class="btn btn-primary btn-sm"
+                                href="#"
+                            >بدء الخدمة</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        }
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="outer-container">
+            <div class="card border-neutral-primary rounded-4 p-md-3">
+                <div class="card-body">
+                    <div class="circle-icon-sm bg-background-brand-light mb-4">
+                        <i class="fa-light fa-circle-check fs-20 text-primary"></i>
+                    </div>
+                    <h5 class="card-title fs-18 fw-700 mb-2">التعليقات والاقتراحات</h5>
+                    <p class="mb-4">لأي استفسار أو ملاحظات حول الخدمات الحكومية، يرجى ملء المعلومات المطلوبة.</p>
+
+
+                    <a
+                        class="btn btn-primary "
+                        href="#"
+                        role="button"
+                    > تواصل معنا</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    @@include('./components/feedback.html')
+
+    @@include('./components/footer.html')
+    @@include('./partials/main-scripts.html')
+    @@include('./partials/owl-script.html')
+    <script src="js/service.js"></script>
+
+</body>
+
+</html>

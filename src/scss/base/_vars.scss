@@ -182,7 +182,7 @@ $min-contrast-ratio: 5;
 $theme-font: "IBM Plex Sans Arabic", sans-serif;
 $form-control-p-x: 0.8rem;
 $form-control-p-y: 0.6rem;
-$form-control-radius: 0.5rem;
+$form-control-radius: 6px;
 $form-control-border-color: getColor(light, field-border-default);
 $form-control-border-error-color: getColor(light, field-border-error);
 $form-control-border-pressed-color: getColor(light, field-border-pressed);

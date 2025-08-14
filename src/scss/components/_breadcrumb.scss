@@ -1,0 +1,37 @@
+@import "../base/mixins";
+@import "../base/_vars";
+
+.breadcrumb-item + .breadcrumb-item::before {
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 900;
+  padding: 0 0.5rem;
+  color: $gray-400;
+
+  content: "\f104";
+
+  @include ltr {
+    content: "\f105";
+  }
+
+  @include rtl {
+    float: right;
+  }
+}
+
+.breadcrumb-item + .breadcrumb-item {
+  padding-left: 0;
+}
+
+.breadcrumb-item {
+  a {
+    color: $gray-400;
+    text-decoration: none;
+  }
+
+  &:not(:last-of-type) {
+    a {
+      color: $gray-800;
+      text-decoration: none;
+    }
+  }
+}

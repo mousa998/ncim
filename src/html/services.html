@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html
+    lang="ar"
+    dir="rtl"
+>
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    @@include('./partials/meta.html')
+    <title>الخدمـات</title>
+</head>
+
+<body>
+    @@include('./components/control-bar.html')
+    @@include('./components/navbar.html')
+
+
+    @@include('./components/header.html', {
+    "breadcrumbs": [
+    {"text": "عن المركز", "link": "/"},
+    {"text": "الخدمـات", "link": "/services.html"}
+    ],
+    "title": "الخدمـات"
+    })
+
+
+    <section
+        id="services"
+        class="py-6"
+    >
+        <div class="outer-container">
+            <div class="d-flex justify-content-between gap-3 flex-wrap mb-4 rounded-4">
+                <!-- Nav tabs -->
+                <ul
+                    class="nav nav-tabs"
+                    id="servicesTab"
+                    role="tablist"
+                >
+                    <li
+                        class="nav-item"
+                        role="presentation"
+                    >
+                        <button
+                            class="nav-link active"
+                            id="all-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#all"
+                            type="button"
+                            role="tab"
+                            aria-controls="all"
+                            aria-selected="true"
+                        >
+                            الكل
+                        </button>
+                    </li>
+                    <li
+                        class="nav-item"
+                        role="presentation"
+                    >
+                        <button
+                            class="nav-link"
+                            id="individuals-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#individuals"
+                            type="button"
+                            role="tab"
+                            aria-controls="individuals"
+                            aria-selected="false"
+                        >
+                            الأفراد
+                        </button>
+                    </li>
+                    <li
+                        class="nav-item"
+                        role="presentation"
+                    >
+                        <button
+                            class="nav-link"
+                            id="employers-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#employers"
+                            type="button"
+                            role="tab"
+                            aria-controls="employers"
+                            aria-selected="false"
+                        >
+                            أصحاب العمل
+                        </button>
+                    </li>
+                    <li
+                        class="nav-item"
+                        role="presentation"
+                    >
+                        <button
+                            class="nav-link"
+                            id="gov-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#gov"
+                            type="button"
+                            role="tab"
+                            aria-controls="gov"
+                            aria-selected="false"
+                        >
+                            الجهات الحكومية
+                        </button>
+                    </li>
+                    <li
+                        class="nav-item"
+                        role="presentation"
+                    >
+                        <button
+                            class="nav-link"
+                            id="inspection-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#inspection"
+                            type="button"
+                            role="tab"
+                            aria-controls="inspection"
+                            aria-selected="false"
+                        >
+                            شركات التفتيش
+                        </button>
+                    </li>
+                </ul>
+
+                <!-- Action buttons -->
+                <div class="d-flex gap-3 align-items-center">
+                    <button
+                        type="button"
+                        class="btn btn-outline-neutral-primary text-default d-flex align-items-center gap-2"
+                    >
+                        ترتيب حسب
+                        <img
+                            src="images/icons/sort-down.svg"
+                            alt=""
+                        >
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-default d-flex align-items-center gap-2"
+                    >
+                        <img
+                            src="images/icons/filter.svg"
+                            alt=""
+                        >
+                        تصفية
+                        <i
+                            class="fa fa-angle-down"
+                            aria-hidden="true"
+                        ></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div
+                    class="tab-pane fade show active"
+                    id="all"
+                    role="tabpanel"
+                    aria-labelledby="all-tab"
+                >
+                    <div class="row row-cols-xl-3 row-cols-md-2 g-4">
+                        @@for (var i = 0; i <
+                            6;
+                            i++){
+                            <div
+                        >
+                            @@include('./components/service-card.html')
+                    </div>
+                    }
+                </div>
+            </div>
+            <div
+                class="tab-pane fade"
+                id="individuals"
+                role="tabpanel"
+                aria-labelledby="individuals-tab"
+            >
+                محتوى الأفراد
+            </div>
+            <div
+                class="tab-pane fade"
+                id="employers"
+                role="tabpanel"
+                aria-labelledby="employers-tab"
+            >
+                محتوى أصحاب العمل
+            </div>
+            <div
+                class="tab-pane fade"
+                id="gov"
+                role="tabpanel"
+                aria-labelledby="gov-tab"
+            >
+                محتوى الجهات الحكومية
+            </div>
+            <div
+                class="tab-pane fade"
+                id="inspection"
+                role="tabpanel"
+                aria-labelledby="inspection-tab"
+            >
+                محتوى شركات التفتيش
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+
+
+
+    @@include('./components/feedback.html')
+
+    @@include('./components/footer.html')
+    @@include('./partials/main-scripts.html')
+
+</body>
+
+</html>

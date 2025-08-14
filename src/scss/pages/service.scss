@@ -1,0 +1,26 @@
+@import "../base/mixins";
+@import "../base/vars";
+
+.service-sidebar {
+  @include breakpoint(lg) {
+    transform: translateY(-41%);
+  }
+}
+
+.services-owl {
+  .owl-dots {
+    margin-top: 25px !important; /* adjust as needed */
+  }
+
+  .owl-dot.active span {
+    background-color: $green-600 !important; /* Bootstrap primary color or any color you want */
+  }
+
+  .owl-dot span {
+    background-color: $gray-200 !important; /* default dot color */
+    width: 12px; /* size of the dot */
+    height: 12px;
+    border-radius: 50%;
+    display: block;
+  }
+}

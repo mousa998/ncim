@@ -1,0 +1,50 @@
+@import "../base/_vars";
+
+$pagination-padding-x: 0.75rem;
+$pagination-padding-y: 0.5rem;
+$pagination-font-size: 1rem;
+$pagination-color: $black;
+$pagination-bg: transparent;
+$pagination-border-width: 0;
+$pagination-border-color: transparent;
+$pagination-border-radius: 0.5rem;
+
+$pagination-hover-color: $black;
+$pagination-hover-bg: #f8f9fa;
+$pagination-hover-border-color: transparent;
+
+$pagination-focus-color: $black;
+$pagination-focus-bg: #f8f9fa;
+$pagination-focus-box-shadow: none;
+
+$pagination-active-color: #fff;
+$pagination-active-bg: transparent;
+$pagination-active-border-color: transparent;
+
+$pagination-disabled-color: #6c757d;
+$pagination-disabled-bg: transparent;
+$pagination-disabled-border-color: transparent;
+
+.pagination {
+  .page-item.active {
+    .page-link {
+      position: relative;
+      color: $black !important;
+      background-color: transparent; // override BS active bg
+      border-color: transparent; // override BS active border
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 68%;
+        height: 4px;
+        background-color: #1b8354;
+        border-radius: 50rem;
+        pointer-events: none;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

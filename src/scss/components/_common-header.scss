@@ -1,0 +1,15 @@
+@import "../base/mixins";
+@import "../base/vars";
+
+.common-header {
+  background: url("../images/bgs/header_bg.svg");
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-color: $gray-50;
+
+  @include ltr {
+    background: url("../images/bgs/header_bg_flipped.svg");
+    background-position: right top;
+    background-repeat: no-repeat;
+  }
+}
