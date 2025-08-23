@@ -90,7 +90,7 @@
                                 <div class="input-group d-flex">
                                     <select
                                         class="form-select "
-                                        style="width: 100px;"
+                                        style="max-width: 100px;"
                                     >
                                         <option selected>+966</option>
                                     </select>
@@ -106,7 +106,7 @@
                                 <label
                                     for="subject"
                                     class="form-label"
-                                ><span>*</span>موضوع</label>
+                                >موضوع</label>
                                 <input
                                     type="text"
                                     class="form-control"
@@ -118,13 +118,16 @@
                                 <label
                                     for="category"
                                     class="form-label"
-                                ><span>*</span>الفئة</label>
+                                >الفئة</label>
                                 <select
                                     class="form-select"
                                     aria-label="Default select example"
                                     id="category"
                                 >
-                                    <option selected>اقتراحات</option>
+                                    <option
+                                        selected
+                                        class="text-text-placeholder"
+                                    >اقتراحات</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
@@ -134,7 +137,7 @@
                                 <label
                                     for="content"
                                     class="form-label"
-                                ><span>*</span>كيف يمكننا المساعدة؟</label>
+                                >كيف يمكننا المساعدة؟</label>
                                 <textarea
                                     class="form-control"
                                     name="content"
@@ -170,6 +173,7 @@
                         <div class="card rounded-4 p-lg-3 contact-sidebar">
                             <div class="card-body">
                                 <div class="d-flex flex-column gap-3 mb-4">
+                                    <h5 class="fs-18 fw-700">تواصل مع آمر</h5>
                                     <div class="d-flex">
                                         <div class="flex-shrink-0">
                                             <img
@@ -302,20 +306,32 @@
                                 </div>
 
                                 <h5 class="fs-18 fw-700 mb-3">تابعنا على</h5>
-                                <div class="d-flex gap-4">
+                                <div class="d-flex gap-4 align-items-center">
                                     <a
                                         href="#"
-                                        class="text-default fs-20"
-                                    ><i class="fa-brands fa-instagram"></i></a>
+                                        class="text-default fs-20 d-flex align-items-center text-decoration-none"
+                                    >
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
                                     <a
                                         href="#"
-                                        class="text-default fs-20"
-                                    ><i class="fa-brands fa-linkedin-in"></i></a>
+                                        class="text-default fs-20 d-flex align-items-center text-decoration-none"
+                                    >
+                                        <img
+                                            src="images/icons/linkedin.svg"
+                                            alt="linkedin"
+                                            height="20"
+                                            class="d-block"
+                                        />
+                                    </a>
                                     <a
                                         href="#"
-                                        class="text-default fs-20"
-                                    ><i class="fa-brands fa-x-twitter"></i></a>
+                                        class="text-default fs-20 d-flex align-items-center text-decoration-none"
+                                    >
+                                        <i class="fa-brands fa-x-twitter"></i>
+                                    </a>
                                 </div>
+
 
                                 <hr class="my-4" />
 

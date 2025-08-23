@@ -57,13 +57,22 @@
       // Active state (missing in current style)
       &.active {
         font-weight: 600;
-        color: $primary !important; // Use your theme color
+        color: $black !important; // Use your theme color
+        background-color: rgba($gray-100, 0.5);
 
         &::after {
-          background-color: $primary !important;
-          width: 100%; // Full width underline for active
-        }
-      }
+          content: ""; // This was missing - required for pseudo-elements
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 0;
+          height: 4px; // Slightly thinner
+          width: 70%; // More elegant than 90%
+          background-color: $gray-800;
+          border-radius: 50rem;
+          transition: all 0.3s ease;
+        } // This closing brace was incorrectly placed
+      } // Moved the closing brace to here
 
       &:hover {
         background-color: rgba($gray-100, 0.5); // More subtle
@@ -107,6 +116,11 @@
 
         &:hover::after {
           display: none; // Remove underline effect on mobile
+        }
+
+        // Hide the ::after indicator on mobile for active items too
+        &.active::after {
+          display: none;
         }
       }
     }
@@ -182,12 +196,19 @@
     }
   }
 
-  // Specific adjustments for ~1024px screens
-  @media (max-width: 1024px) and (min-width: 992px) {
+  // For very large desktops (1440px and up)
+  @media (min-width: 1200px) and (max-width: 1710px) {
+    .navbar-brand img {
+      height: 60px; // scale logo slightly larger
+    }
+
     .navbar-nav {
+      gap: 0.2rem !important;
+
       .nav-link {
-        padding: 0 0.75rem; // Slightly reduce padding
-        font-size: 0.9rem; // Slightly smaller font
+        padding: 0 0.5rem; // increase horizontal padding
+        font-size: 0.8rem; // adjust font size to avoid wrapping
+        white-space: nowrap; // prevent text from wrapping
       }
     }
   }

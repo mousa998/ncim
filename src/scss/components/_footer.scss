@@ -17,7 +17,15 @@ footer {
     &:hover {
       background-color: $gray-800;
       color: $white;
-      stroke: $white;
+      svg,
+      path {
+        stroke: $white;
+        fill: $white;
+      }
+
+      img {
+        filter: brightness(0) invert(1);
+      }
     }
   }
 }

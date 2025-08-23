@@ -2,6 +2,7 @@
 
 // === Base Tokens ===
 $white: #ffffff;
+$white-80: #ffffffcc;
 $black: #161616;
 $blue-900: #1849a9;
 $blue-200: #b2ddff;
@@ -41,7 +42,7 @@ $text: (
   secondary-paragraph: $gray-700,
   oncolor: $white,
   oncolor-primary: $white,
-  oncolor-secondary: $white,
+  oncolor-secondary: $white-80,
   text-tertiary: #64748b,
 );
 

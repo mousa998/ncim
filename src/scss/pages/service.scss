@@ -4,6 +4,13 @@
 .service-sidebar {
   @include breakpoint(lg) {
     transform: translateY(-41%);
+    margin-bottom: -41%; /* Add this line to compensate for the translation */
+  }
+}
+
+#common-header-content {
+  @include breakpoint(lg) {
+    width: calc(100% - 420px);
   }
 }
 
@@ -22,5 +29,11 @@
     height: 12px;
     border-radius: 50%;
     display: block;
+  }
+}
+
+.service-social-side {
+  @include breakpoint(lg) {
+    width: 410px;
   }
 }

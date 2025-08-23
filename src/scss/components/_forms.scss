@@ -182,6 +182,10 @@
   .form-select {
     background-color: $gray-100;
     border: none;
+    color: $gray-700;
+    option {
+      color: $gray-700;
+    }
     padding-block: 0.8rem !important;
   }
 }

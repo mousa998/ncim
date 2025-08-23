@@ -139,9 +139,15 @@ export function images() {
       imagemin(
         [
           mozjpeg({ quality: 80, progressive: true }),
-          pngquant({ quality: [0.6, 0.8] }),
+          pngquant({
+            quality: [0.7, 0.9],
+            speed: 1,
+          }),
           svgo({
-            plugins: [{ name: "removeViewBox", active: true }],
+            plugins: [
+              { name: "removeViewBox", active: true },
+              // Remove the problematic plugins
+            ],
           }),
         ],
         { verbose: true }
@@ -150,7 +156,6 @@ export function images() {
     .pipe(gulp.dest(config.dist.images))
     .pipe(server.stream());
 }
-
 /* =====================
    COPY TASKS
 ===================== */
